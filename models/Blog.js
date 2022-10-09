@@ -12,13 +12,13 @@ Blog.init(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     post: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
-    author: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
