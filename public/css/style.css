@@ -1,6 +1,6 @@
 :root {
   --primary: #2b3650;
-  --secondary: #86938f;
+  --secondary: #762a24;
   --tertiary: #d86b11;
   --quatrinary: #3a7149;
   --light: #e3e4e3;
@@ -34,4 +34,17 @@ p {
 }
 h2:hover {
   color: var(--tertiary);
+}
+
+.each-post {
+  border-bottom: var(--dark) solid 2px;
+}
+
+.comment {
+  border-bottom: var(--dark) solid 2px;
+}
+
+.comment p {
+  color: var(--secondary);
+  margin-top: 1em;
 }
