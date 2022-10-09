@@ -15,9 +15,10 @@
     <title>The Wandering Comma</title>
   </head>
   <body>
+    <!-- header remains unchanged for each handlebar page -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand m-4" href="#">The Wandering Comma</a>
+        <a class="navbar-brand m-4" href="/">The Wandering Comma</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -40,6 +41,7 @@
               <a class="nav-link" href="#">Dashboard</a>
             </li>
           </ul>
+          <!-- login button needs route to handlebars html -->
           <span class="navbar navbar-dark bg-dark m-4">
             <a href="#" class="form-inline">
               <button class="btn btn-outline-success" type="button">
@@ -52,7 +54,8 @@
     </header>
 
     <main>
-      <section class="blogpost">
+        <!-- these post sections can be partials in handlebars -->
+      <!-- <section class="blogpost">
         <a href="#">
           <h2>The Wandering Comma</h2>
           <p><em>Sunday, October 9th, 2022</em></p>
@@ -77,6 +80,14 @@
           odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
           adipiscing at in. Ipsum dolor sit amet consectetur.
         </p>
+      </section> -->
+      <section class="Dashboard">
+        <div>
+            <form action=""></form>
+        </div>
+        <div>
+
+        </div>
       </section>
     </main>
     <footer></footer>
