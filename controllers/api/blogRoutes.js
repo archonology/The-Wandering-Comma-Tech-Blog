@@ -1,5 +1,21 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, User, Comment, CommentTag } = require('../../models');
+
+//GET all blog posts
+router.get('/', async (req, res) => {
+  try {
+      const dbBlogData = await Blog.findAll({
+          // attributes: ['id', 'title', 'post', 'date_created'],
+          include: [{ model: User }, { model: Comment }],
+      });
+
+      // const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+      res.status(200).json(dbBlogData);
+      // res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
 
 //POST a new blogpost
 router.post('/dashboard', async (req, res) => {

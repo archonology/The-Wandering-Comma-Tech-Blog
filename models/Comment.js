@@ -14,14 +14,6 @@ Comment.init(
     comment: {
       type: DataTypes.TEXT,
     },
-    blog_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'blog',
-        key: 'id',
-      },
-    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
