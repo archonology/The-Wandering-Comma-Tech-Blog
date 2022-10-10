@@ -10,14 +10,14 @@ router.get('/', async (req, res) => {
 
         const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
 
-        res.render('homepage', { blogs, logged_in: req.session.logged_in,});
+        res.render('homepage', { blogs, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
@@ -33,7 +33,7 @@ router.get('/posts/:id', async (req, res) => {
 
         const blogs = dbBlogData.get({ plain: true });
 
-        res.render('posts', { blogs, logged_in: req.session.logged_in,});
+        res.render('posts', { blogs, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }
