@@ -5,8 +5,6 @@
   --quatrinary: #3a7149;
   --light: #e3e4e3;
   --dark: #182c23;
-  --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
 }
 
 body {
@@ -24,6 +22,14 @@ main {
   padding: 3em;
 }
 
+.login {
+  background-color: #53a268;
+}
+
+.logout {
+  background-color: #c64a41;
+}
+
 h2 {
   text-decoration: underline;
   color: var(--dark);
@@ -31,9 +37,6 @@ h2 {
 p {
   text-decoration: none;
   color: var(--dark);
-}
-h2:hover {
-  color: var(--tertiary);
 }
 
 .each-post {
@@ -59,6 +62,35 @@ h2:hover {
   background-color: var(--quatrinary);
 }
 
+
+.update {
+  background-color: #deac08;
+}
+
+.delete {
+  background-color: #c64a41;
+}
+
+.login:hover {
+  background-color: #2e613c;
+}
+
+.logout:hover {
+  background-color: #762a24;
+}
+
+h2:hover {
+  color: var(--tertiary);
+}
+
 .new-post button:hover {
   background-color: #53a268;
+}
+
+.update:hover {
+  background-color: #d2a308;
+}
+
+.delete:hover {
+  background-color: #762a24;
 }

@@ -33,10 +33,10 @@
         <!-- login button needs route to handlebars html -->
         <span class="navbar navbar-dark bg-dark m-4">
           {{#if loggedIn}}
-          <button id="logout" class="btn-no-style">Logout</button>
+          <button id="logout" class="btn btn-outline-success logout">Logout</button>
           {{else}}
           <a href="/login" class="form-inline">
-            <button class="btn btn-outline-success" type="button">
+            <button class="btn btn-outline-success login" type="button">
               Login
             </button>
             {{/if}}

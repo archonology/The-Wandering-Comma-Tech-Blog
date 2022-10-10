@@ -1,3 +1,8 @@
-{{#each newBlog as |Blog|}}
-{{> newBlog}}
-{{/each}}
+       <div class="each-post">
+        {{#each Blog}}
+            <h2>{{title}}</h2>
+            <p><em>{{date_created}}</em></p>
+            <p>{{post}}</p>
+            <p><em>By {{name}}</em></p>
+            {{/each}}
+        </div>

@@ -33,9 +33,10 @@
                 <!-- login button needs route to handlebars html -->
                 <span class="navbar navbar-dark bg-dark m-4">
                     <a href="#" class="form-inline">
-                        <button class="btn btn-outline-success" type="button">
+                        <button class="btn btn-outline-success login" type="button">
                             Login
                         </button>
+                        <button id="logout" class="btn btn-outline-success logout">Logout</button>
                     </a>
                 </span>
             </div>
@@ -70,7 +71,7 @@
           adipiscing at in. Ipsum dolor sit amet consectetur.
         </p>
       </section> -->
-      <form class="new-post p-4">
+      <!-- <form class="new-post p-4">
     
         <div class="mb-3">
             <label for="title">Title:</label>
@@ -81,7 +82,53 @@
             <br>
             <button type="submit" class="btn d-flex justify-content-end">Publish</button>
         </div>
-    </form>
+    </form> -->
+    <section>
+        <div class="each-post">
+            <h2>The Wandering Comma</h2>
+            <p><em>Sunday, October 9th, 2022</em></p>
+            <p>psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam
+                volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum
+                dolor sit amet consectetur. psum dolor sit amet, consectetur adipiscing
+                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
+                adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed.
+                Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet
+                consectetur.</p>
+            <p><em>By Javi Scripts</em></p>
+        </div>
+        <div class="comment">
+            <p>Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
+                adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua!</p>
+            <p><em>Comment By: <strong>Cody Python</strong> on Sunday, October 9th, 2022</em></p>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                data-bs-auto-close="outside">Leave Comment</button>
+            <form class="dropdown-menu p-4">
+    
+                <div class="mb-3">
+                    <label for="DropdownFormComment" class="form-label d-flex justify-content-start">Comment</label>
+    
+                    <textarea name="comment" id="DropdownFormComment" cols="100" rows="10"
+                        placeholder="write comment here"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
+                </div>
+            </form>
+            <button class="btn btn-outline-success update" type="submit">
+                Update Post
+            </button>
+            <button class="btn btn-outline-success delete" type="submit">
+                Delete Post
+            </button>
+        </div>
+    </section>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
