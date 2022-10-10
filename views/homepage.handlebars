@@ -1,8 +1,8 @@
        <div class="each-post">
-        {{#each Blog}}
-            <h2>{{title}}</h2>
-            <p><em>{{date_created}}</em></p>
-            <p>{{post}}</p>
-            <p><em>By {{name}}</em></p>
+        {{#each blogs as |blog|}}
+            <h2>{{blog.title}}</h2>
+            <p><em>{{blog.date_created}}</em></p>
+            <p>{{blog.post}}</p>
+            {{!-- <p><em>By {{name}}</em></p> --}}
             {{/each}}
         </div>
