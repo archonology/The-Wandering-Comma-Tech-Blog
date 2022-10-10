@@ -1,36 +1,34 @@
-<section>
-        <div class="each-post">
-            <h2>{{title}}/h2>
-            <p><em>{{format_date date_created}}</em></p>
-            <p>{{post}}</p>
-            <p><em>By Javi Scripts</em></p>
+<div class="each-post">
+    <h2>{{blogs.title}}</h2>
+    <p><em>{{blogs.date_created}}</em></p>
+    <p>{{blogs.post}}</p>
+    <p><em>By Javi Scripts</em></p>
+</div>
+<div class="comment">
+    <p>Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
+        adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua!</p>
+    <p><em>Comment By: <strong>Cody Python</strong> on Sunday, October 9th, 2022</em></p>
+</div>
+<div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+        data-bs-auto-close="outside">Leave Comment</button>
+    <form class="dropdown-menu p-4">
+
+        <div class="mb-3">
+            <label for="DropdownFormComment" class="form-label d-flex justify-content-start">Comment</label>
+
+            <textarea name="comment" id="DropdownFormComment" cols="100" rows="10"
+                placeholder="write comment here"></textarea>
+            <br>
+            <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
         </div>
-        <div class="comment">
-            <p>Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
-                adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua!</p>
-            <p><em>Comment By: <strong>Cody Python</strong> on Sunday, October 9th, 2022</em></p>
-        </div>
-        <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-                data-bs-auto-close="outside">Leave Comment</button>
-            <form class="dropdown-menu p-4">
-    
-                <div class="mb-3">
-                    <label for="DropdownFormComment" class="form-label d-flex justify-content-start">Comment</label>
-    
-                    <textarea name="comment" id="DropdownFormComment" cols="100" rows="10"
-                        placeholder="write comment here"></textarea>
-                    <br>
-                    <button type="submit" class="btn btn-primary d-flex justify-content-end">Publish Comment</button>
-                </div>
-            </form>
-            <button class="btn btn-outline-success update" type="submit">
-                Update Post
-            </button>
-            <button class="btn btn-outline-success delete" type="submit">
-                Delete Post
-            </button>
-        </div>
-    </section>
+    </form>
+    <button class="btn btn-outline-success update" type="submit">
+        Update Post
+    </button>
+    <button class="btn btn-outline-success delete" type="submit">
+        Delete Post
+    </button>
+</div>

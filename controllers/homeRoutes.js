@@ -31,7 +31,7 @@ router.get('/posts/:id', async (req, res) => {
             attributes: ['id', 'title', 'post', 'date_created'],
         });
 
-        const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+        const blogs = dbBlogData.get({ plain: true });
 
         res.render('posts', { blogs, logged_in: req.session.logged_in,});
     } catch (err) {
