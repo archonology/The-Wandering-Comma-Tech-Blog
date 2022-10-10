@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Blog } = require('../models');
 const withAuth = require('../utils/auth');
 
+//GET all blog posts
 router.get('/', async (req, res) => {
     try {
         const dbBlogData = await Blog.findAll({
@@ -16,6 +17,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+//GET the login/signup page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -25,6 +27,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//GET a single post
 router.get('/posts/:id', async (req, res) => {
     try {
         const dbBlogData = await Blog.findByPk(req.params.id, {
@@ -34,6 +37,21 @@ router.get('/posts/:id', async (req, res) => {
         const blogs = dbBlogData.get({ plain: true });
 
         res.render('posts', { blogs, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//Get dashboard -- must be logged in
+router.get('/dashboard/:id', async (req, res) => {
+    try {
+        const dbBlogData = await Blog.findByPk(req.params.id, {
+            attributes: ['id', 'title', 'post', 'date_created'],
+        });
+
+        const blogs = dbBlogData.get({ plain: true });
+
+        res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }

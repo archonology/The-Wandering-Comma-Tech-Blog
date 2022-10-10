@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Blog } = require('../../models');
 
-router.post('/', async (req, res) => {
+//POST a new blogpost
+router.post('/dashboard', async (req, res) => {
   try {
     const newBlog = await Blog.create({
       ...req.body,
@@ -14,7 +15,30 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+//UPDATE a blogpost
+router.put('/dashboard/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.update({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!blogData) {
+      res.status(404).json({ message: 'No blogs found with this id!' });
+      return;
+    }
+
+    res.status(200).json(blogData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+//DELETE a blogpost
+router.delete('/dashboard/:id', async (req, res) => {
   try {
     const blogData = await Blog.destroy({
       where: {
