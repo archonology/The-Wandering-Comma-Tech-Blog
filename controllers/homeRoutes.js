@@ -7,6 +7,15 @@ router.get('/', async (req, res) => {
     try {
         const dbBlogData = await Blog.findAll({
             attributes: ['id', 'title', 'post', 'date_created'],
+            include: [
+                {
+                  model: User,
+                  attributes: [
+                    'id',
+                    'name',
+                  ],
+                },
+              ],
         });
 
         const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
