@@ -1,7 +1,7 @@
        <div class="each-post">
         {{#each blogs as |blog|}}
-            <h2>{{blog.title}}</h2>
-            <p><em>{{blog.date_created}}</em></p>
+            <a href="/posts/{{id}}"><h2>{{blog.title}}</h2>
+            <p><em>{{blog.date_created}}</em></p></a>
             <p>{{blog.post}}</p>
             <p><em>By Javi Scripts</em></p>
             {{!-- <p><em>By {{name}}</em></p> --}}
