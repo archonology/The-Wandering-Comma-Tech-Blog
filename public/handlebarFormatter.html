@@ -1,61 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./css/jass.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <title>The Wandering Comma</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- header remains unchanged for each handlebar page -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand m-4" href="/">The Wandering Comma</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Homepage<span class="sr-only"></span
-              ></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Dashboard</a>
-            </li>
-          </ul>
-          <!-- login button needs route to handlebars html -->
-          <span class="navbar navbar-dark bg-dark m-4">
-            <a href="#" class="form-inline">
-              <button class="btn btn-outline-success" type="button">
-                Login
-              </button>
-            </a>
-          </span>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand m-4" href="/">The Wandering Comma</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Homepage<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                </ul>
+                <!-- login button needs route to handlebars html -->
+                <span class="navbar navbar-dark bg-dark m-4">
+                    <a href="#" class="form-inline">
+                        <button class="btn btn-outline-success" type="button">
+                            Login
+                        </button>
+                    </a>
+                </span>
+            </div>
+        </nav>
     </header>
 
     <main>
         <!-- these post sections can be partials in handlebars -->
-      <!-- <section class="blogpost">
+        <!-- <section class="blogpost">
         <a href="#">
           <h2>The Wandering Comma</h2>
           <p><em>Sunday, October 9th, 2022</em></p>
@@ -81,46 +70,51 @@
           adipiscing at in. Ipsum dolor sit amet consectetur.
         </p>
       </section> -->
-      <section>
-        <div class="each-post">
-          <a href="#">
-            <h2>The Wandering Comma</h2>
-            <p><em>Sunday, October 9th, 2022</em></p>
-          </a>
-          <p>psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam
-            volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum
-            dolor sit amet consectetur. psum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
-            adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed.
-            Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet
-            consectetur.</p>
-          <p><em>By Javi Scripts</em></p>
-        </div>
-        <div class="comment">
-            <p>Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
-                adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua!</p>
-            <p><em>Comment By: <strong>Cody Python</strong> on Sunday, October 9th, 2022</em></p>
-        </div>
-        <div>
-          <!-- needs to trigger a drop down form or alert? -->
-          <a href="/comment" class="form-inline">
-            <br>
-            <button class="btn btn-outline-success" type="button">
-              Leave Comment
-            </button>
-          </a>
-        </div>
-      </section>
+        <section>
+            <div class="each-post">
+                <h2>The Wandering Comma</h2>
+                <p><em>Sunday, October 9th, 2022</em></p>
+                <p>psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam
+                    volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum
+                    dolor sit amet consectetur. psum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
+                    adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed.
+                    Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet
+                    consectetur.</p>
+                <p><em>By Javi Scripts</em></p>
+            </div>
+            <div class="comment">
+                <p>Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
+                    adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua!</p>
+                <p><em>Comment By: <strong>Cody Python</strong> on Sunday, October 9th, 2022</em></p>
+            </div>
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false" data-bs-auto-close="outside">Leave Comment</button>
+                <form class="dropdown-menu p-4">
 
-        </div>
-      </section>
-    </main>
-    <footer></footer>
-  </body>
+                    <div class="mb-3">
+                        <label for="DropdownFormComment" class="form-label d-flex justify-content-start">Comment</label>
+
+                        <textarea name="comment" id="DropdownFormComment" cols="100" rows="10"
+                            placeholder="write comment here"></textarea>
+                        <br>
+                        <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
+                    </div>
+            </div>
+            </form>
+        </section>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+        <footer></footer>
+</body>
+
 </html>

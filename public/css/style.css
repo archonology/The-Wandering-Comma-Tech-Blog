@@ -40,6 +40,10 @@ h2:hover {
   border-bottom: var(--dark) solid 2px;
 }
 
+.dropdown {
+  margin-top: 1em;
+}
+
 .comment {
   border-bottom: var(--dark) solid 2px;
 }

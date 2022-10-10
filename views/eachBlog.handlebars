@@ -1,10 +1,8 @@
- <section>
-        <div class="each-post">
-          <a href="#">
-            <h2>The Wandering Comma</h2>
-            <p><em>Sunday, October 9th, 2022</em></p>
-          </a>
-          <p>psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+<section>
+    <div class="each-post">
+        <h2>The Wandering Comma</h2>
+        <p><em>Sunday, October 9th, 2022</em></p>
+        <p>psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam
             volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum
             dolor sit amet consectetur. psum dolor sit amet, consectetur adipiscing
@@ -15,22 +13,28 @@
             dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed.
             Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet
             consectetur.</p>
-          <p><em>By Javi Scripts</em></p>
-        </div>
-        <div class="comment">
-            <p>Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
-                adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua!</p>
-            <p><em>Comment By: <strong>Cody Python</strong> on Sunday, October 9th, 2022</em></p>
-        </div>
-        <div>
-          <!-- needs to trigger a drop down form or alert? -->
-          <a href="/comment" class="form-inline">
-            <br>
-            <button class="btn btn-outline-success" type="button">
-              Leave Comment
-            </button>
-          </a>
-        </div>
-      </section>
+        <p><em>By Javi Scripts</em></p>
+    </div>
+    <div class="comment">
+        <p>Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra
+            adipiscing at in. Ipsum dolor sit amet consectetur. psum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua!</p>
+        <p><em>Comment By: <strong>Cody Python</strong> on Sunday, October 9th, 2022</em></p>
+    </div>
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+            data-bs-auto-close="outside">Leave Comment</button>
+        <form class="dropdown-menu p-4">
+
+            <div class="mb-3">
+                <label for="DropdownFormComment" class="form-label d-flex justify-content-start">Comment</label>
+
+                <textarea name="comment" id="DropdownFormComment" cols="100" rows="10"
+                    placeholder="write comment here"></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
+            </div>
+    </div>
+    </form>
+</section>
