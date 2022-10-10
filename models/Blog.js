@@ -13,10 +13,12 @@ Blog.init(
     },
     title: {
       type: DataTypes.STRING,
+      
       allowNull: false,
+
     },
     post: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     user_id: {
       type: DataTypes.INTEGER,
