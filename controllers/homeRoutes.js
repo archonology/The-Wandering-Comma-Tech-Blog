@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
                   model: User,
                   attributes: [
                     'id',
-                    'name',
+                    'username',
                   ],
                 },
                 {
@@ -44,7 +44,7 @@ router.get('/', async (req, res) => {
                   model: User,
                   attributes: [
                     'id',
-                    'name',
+                    'username',
                   ],
                 },
                 {
@@ -85,7 +85,7 @@ router.get('/dashboard', async (req, res) => {
                   model: User,
                   attributes: [
                     'id',
-                    'name',
+                    'username',
                   ],
                 },
                 {
@@ -113,9 +113,9 @@ router.get('/posts/:id', async (req, res) => {
             include: [{ model: User }, { model: Comment }],
           });
 
-        // const blogs = dbBlogData.get({ plain: true });
-        res.status(200).json(dbBlogData);
-        // res.render('posts', { blogs, loggedIn: req.session.loggedIn,});
+        const blogs = dbBlogData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('posts', { blogs, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }

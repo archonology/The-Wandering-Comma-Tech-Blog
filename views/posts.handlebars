@@ -2,13 +2,13 @@
     <h2>{{blogs.title}}</h2>
     <p><em>{{blogs.date_created}}</em></p>
     <p>{{blogs.post}}</p>
-    <p><em>By {{blogs.user.name}}</em></p>
+    <p><em>By {{blogs.user.username}}</em></p>
 </div>
 {{!-- for each comment --}}
 {{#each comments as |comment|}}
 <div class="comment">
     <p>{{comment.comment}}</p>
-    <p><em>Comment By: <strong>{{comment.users.name}}</strong> on {{comment.date_created}}</em></p>
+    <p><em>Comment By: <strong>{{comment.users.username}}</strong> on {{comment.date_created}}</em></p>
 </div>
 {{/each}}
 
