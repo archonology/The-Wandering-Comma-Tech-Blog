@@ -14,18 +14,9 @@ User.hasMany(Blog, {
   onDelete: 'CASCADE'
 });
 
-//comments belong to blogs
-// Comment.belongsTo(Blog, {
-//   foreignKey: "blog_id",
-// });
 
-//a blog hasMany comments
-// Blog.hasMany(Comment, {
-//   foreignKey: 'blog_id',
-//   onDelete: 'CASCADE'
-// });
 
-//Blog belongs to many comments
+//THROUGH CommentTag to join the tables as needed
 Comment.belongsToMany(User, { through: CommentTag, foreignKey: "comment_id" });
 User.belongsToMany(Comment, { through: CommentTag, foreignKey: "user_id" });
 

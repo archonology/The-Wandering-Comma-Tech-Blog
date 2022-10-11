@@ -4,6 +4,6 @@
             <p><em>{{blog.date_created}}</em></p></a>
             <p>{{blog.post}}</p>
             {{!-- how do I get the user.id to be the name? --}}
-            <p><em>By {{blog.user_id}}</em></p>
+            <p><em>By {{blog.user.name}}</em></p>
             {{/each}}
         </div>

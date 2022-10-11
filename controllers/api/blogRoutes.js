@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Blog, User, Comment, CommentTag } = require('../../models');
 
-//GET all blog posts
+//GET all blog posts (api/blog)
 router.get('/', async (req, res) => {
   try {
       const dbBlogData = await Blog.findAll({
@@ -12,6 +12,19 @@ router.get('/', async (req, res) => {
       // const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
       res.status(200).json(dbBlogData);
       // res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+//GET all blog posts and render
+router.get('/', async (req, res) => {
+  try {
+      const dbBlogData = await Blog.findAll({
+          include: [{ model: User }, { model: Comment }],
+      });
+
+      const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+      res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
       res.status(500).json(err);
   }
