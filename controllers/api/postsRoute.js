@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Blog, User, Comment, CommentTag } = require('../../models');
 
-//GET all blog posts (api/blog)
+//GET all blog posts (api/posts)
 router.get('/', async (req, res) => {
   try {
       const dbBlogData = await Blog.findAll({
@@ -31,35 +31,46 @@ router.get('/', async (req, res) => {
 });
 
 //POST a new blogpost
-router.post('/dashboard', async (req, res) => {
+router.post('/posts', async (req, res) => {
   try {
     const newBlog = await Blog.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newBlog);
+    const blogPost = dbBlogData.map((blog) => blog.get({ plain: true }));
+    
+    if (!dbBlogData) {
+      res.status(404).json({ message: 'No blogs found with this id!' });
+      return;
+    }
+
+    res.status(200).json(dbBlogData);
+    res.render('homepage', { blogPost, loggedIn: req.session.loggedIn,});
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
 //UPDATE a blogpost
-router.put('/dashboard/:id', async (req, res) => {
+router.put('/posts/:id', async (req, res) => {
   try {
-    const blogData = await Blog.update({
+    const dbBlogData = await Blog.update({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!blogData) {
+    const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+
+    if (!dbBlogData) {
       res.status(404).json({ message: 'No blogs found with this id!' });
       return;
     }
 
-    res.status(200).json(blogData);
+    res.status(200).json(dbBlogData);
+    res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
     res.status(500).json(err);
   }

@@ -2,24 +2,24 @@ const router = require('express').Router();
 const { Comment, Blog, User } = require('../../models');
 
 //GET all comments (/api/comment)
+// router.get('/', async (req, res) => {
+//     try {
+//         const dbCommentData = await Comment.findAll({
+//             // attributes: ['id', 'title', 'post', 'date_created'],
+//             include: [{ model: User }, { model: Blog }],
+//         });
+  
+//         res.status(200).json(dbCommentData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+//   });
+
+//GET Comments
 router.get('/', async (req, res) => {
     try {
         const dbCommentData = await Comment.findAll({
-            // attributes: ['id', 'title', 'post', 'date_created'],
-            include: [{ model: User }, { model: Blog }],
-        });
-  
-        res.status(200).json(dbCommentData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-  });
-
-//GET Comments
-router.get('/posts', async (req, res) => {
-    try {
-        const dbBlogData = await Comment.findAll({
-            attributes: ['id', 'comment', 'blog_id', 'date_created'],
+            attributes: ['id', 'comment', 'user_id', 'date_created'],
             include: [
                 {
                   model: Blog,
@@ -27,12 +27,19 @@ router.get('/posts', async (req, res) => {
                     'id',
                   ],
                 },
+                {
+                  model: User,
+                  attributes: [
+                    'id',
+                    'name',
+                  ],
+                },
               ],
         });
 
-        const comments = dbBlogData.map((comment) => comment.get({ plain: true }));
-
-        res.render('post', { comments, loggedIn: req.session.loggedIn,});
+        // const comments = dbBlogData.map((comment) => comment.get({ plain: true }));
+        res.status(200).json(dbCommentData);
+        // res.render('post', { comments, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }
