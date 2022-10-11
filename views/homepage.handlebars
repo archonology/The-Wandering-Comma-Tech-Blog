@@ -1,9 +1,11 @@
-       <div class="each-post">
-        {{#each blogs as |blog|}}
-            <a href="/posts/{{id}}"><h2>{{blog.title}}</h2>
-            <p><em>{{blog.date_created}}</em></p></a>
-            <p>{{blog.post}}</p>
-            {{!-- how do I get the user.id to be the name? --}}
-            <p><em>By {{blog.user.username}}</em></p>
-            {{/each}}
-        </div>
+{{#each blogs as |blog|}}
+<div class="each-post">
+    <a href="/posts/{{id}}">
+        <h2>{{blog.title}}</h2>
+        <p><em>{{blog.date_created}}</em></p>
+    </a>
+    <p>{{blog.post}}</p>
+    {{!-- how do I get the user.id to be the name? --}}
+    <p><em>By {{blog.user.username}}</em></p>
+</div>
+{{/each}}

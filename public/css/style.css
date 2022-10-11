@@ -41,6 +41,7 @@ p {
 
 .each-post {
   border-bottom: var(--dark) solid 2px;
+  margin-bottom: 1em;
 }
 
 .dropdown {

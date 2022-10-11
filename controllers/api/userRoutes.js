@@ -84,4 +84,20 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//GET all blog posts by User
+router.get('/users/:id', async (req, res) => {
+  try {
+      const dbBlogData = await Blog.findAll(req.params.id, {
+          attributes: ['id', 'title', 'post', 'date_created'],
+          include: [{ model: User }, { model: Comment },],
+      });
+
+      // const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+      res.status(200).json(dbBlogData);
+      // res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
 module.exports = router;

@@ -75,36 +75,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-//GET the dashboard ONLY if logged in
-router.get('/dashboard', async (req, res) => {
-    try {
-        const dbBlogData = await Blog.findAll({
-            attributes: { exclude: ['password'] },
-            include: [
-                {
-                  model: User,
-                  attributes: [
-                    'id',
-                    'username',
-                  ],
-                },
-                {
-                    model: Comment,
-                    attributes: [
-                      'comment',
-                      'date_created',
-                    ],
-                  },
-              ],
-        });
 
-        const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
-
-        res.render('homepage', { blogs, loggedIn: req.session.loggedIn,});
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 //GET a single post
 router.get('/posts/:id', async (req, res) => {
@@ -120,35 +91,6 @@ router.get('/posts/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-// //GET all Comments
-// router.get('/posts/:id', async (req, res) => {
-//     try {
-//         const dbCommentData = await Comment.findAll({
-//             attributes: ['id', 'comment', 'user_id', 'date_created'],
-//             include: [
-//                 {
-//                   model: Blog,
-//                   attributes: [
-//                     'id',
-//                   ],
-//                 },
-//                 {
-//                   model: User,
-//                   attributes: [
-//                     'id',
-//                     'name',
-//                   ],
-//                 },
-//               ],
-//         });
-
-//         const comments = dbBlogData.map((comment) => comment.get({ plain: true }));
-
-//         res.render('posts', { comments, loggedIn: req.session.loggedIn,});
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
 
 //Get dashboard -- must be logged in
 router.get('/dashboard/:id', async (req, res) => {
