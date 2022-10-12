@@ -1,3 +1,4 @@
+{{#if loggedIn}}
 <div class="Dashboard d-flex justify-content-start p-2 flex-grow-1">
     <div class="d-flex justify-content-end p-2">
         <!-- keep track of new post link -->
@@ -24,3 +25,6 @@
         {{/each}}
     </div> --}}
 </div>
+{{else}}
+<p><em>Login or sign up to view your dashboard.</em></p>
+{{/if}}
