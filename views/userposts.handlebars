@@ -1,0 +1,43 @@
+{{#if loggedIn}}
+<div class="each-post">
+    <h2>{{blogs.title}}</h2>
+    <p><em>{{blogs.date_created}}</em></p>
+    <p>{{blogs.post}}</p>
+    <p><em>By {{blogs.user.username}}</em></p>
+</div>
+{{!-- for each comment --}}
+{{#each blogs.comments as |comment|}}
+<div class="comment">
+    <p>{{comment.comment}}</p>
+    <p><em>Comment By: <strong>{{comment.username}}</strong> on {{comment.date_created}}</em></p>
+</div>
+{{/each}}
+
+
+<div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+        data-bs-auto-close="outside">Leave Comment</button>
+    <form class="dropdown-menu p-4 comment-form">
+
+        <div class="mb-3">
+            <label for="comment" class="form-label d-flex justify-content-start">Comment:</label>
+
+            <textarea name="comment" id="comment" cols="100" rows="10" placeholder="write comment here"></textarea>
+            <label for="username" class="form-label d-flex justify-content-start">your name:</label>
+            <input type="text" id="username">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
+        </div>
+    </form>
+    <script src="/js/comment.js"></script>
+    <button class="btn btn-outline-success update" type="submit">
+        Update Post
+    </button>
+    <button class="btn btn-outline-success delete" type="submit">
+        Delete Post
+    </button>
+    {{else}}
+    <p><em>Login to edit post.</em></p>
+</div>
+{{/if}}

@@ -34,6 +34,32 @@ router.get('/', async (req, res) => {
     }
 });
 
+//GET the login/signup page
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('login');
+});
+
+
+
+//GET a single post
+router.get('/posts/:id', async (req, res) => {
+    try {
+        const dbBlogData = await Blog.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Comment }],
+          });
+
+        const blogs = dbBlogData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('posts', { blogs, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 //Get dashboard -- must be logged in
 //the dashboard needs to be by user id.. how?
@@ -41,6 +67,9 @@ router.get('/dashboard', async (req, res) => {
     try {
         const dbBlogData = await Blog.findAll({
             attributes: { exclude: ['password'] },
+            where: {
+                          id: 1
+                        },
             include: [
                 {
                   model: User,
@@ -67,14 +96,19 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
-//GET the login/signup page
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
+//GET one of your single posts as a logged in user
+router.get('/userposts/:id', async (req, res) => {
+    try {
+        const dbBlogData = await Blog.findByPk(req.params.id, {
+            include: [{ model: User }, { model: Comment }],
+          });
 
-    res.render('login');
+        const blogs = dbBlogData.get({ plain: true });
+        // res.status(200).json(dbBlogData);
+        res.render('userposts', { blogs, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 

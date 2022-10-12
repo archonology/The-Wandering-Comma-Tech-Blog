@@ -5,37 +5,37 @@ const withAuth = require('../utils/auth');
 //Get dashboard -- must be logged in
 //the dashboard needs to be by user id.. how?
 //GET all blog posts
-router.get('/dashboard', withAuth, async (req, res) => {
-  try {
-      const dbBlogData = await Blog.findAll({
-        where: {
-          id: 1
-        },
-          include: [
-              {
-                model: User,
-                attributes: [
-                  'id',
-                  'username',
-                ],
-              },
-              {
-                  model: Comment,
-                  attributes: [
-                    'comment',
-                    'date_created',
-                  ],
-                },
-            ],
-      });
+// router.get('/dashboard', withAuth, async (req, res) => {
+//   try {
+//       const dbBlogData = await Blog.findAll({
+//         where: {
+//           id: 1
+//         },
+//           include: [
+//               {
+//                 model: User,
+//                 attributes: [
+//                   'id',
+//                   'username',
+//                 ],
+//               },
+//               {
+//                   model: Comment,
+//                   attributes: [
+//                     'comment',
+//                     'date_created',
+//                   ],
+//                 },
+//             ],
+//       });
 
-      const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+//       const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
 
-      res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
-  } catch (err) {
-      res.status(500).json(err);
-  }
-});
+//       res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+//   } catch (err) {
+//       res.status(500).json(err);
+//   }
+// });
 
 //GET a single post and comment if logged in
 router.get('/posts/:id', withAuth, async (req, res) => {
