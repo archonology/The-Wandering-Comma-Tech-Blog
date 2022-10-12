@@ -65,23 +65,20 @@ router.get('/posts/:id', async (req, res) => {
 //the dashboard needs to be by user id.. how?
 router.get('/dashboard', async (req, res) => {
     try {
-        const dbBlogData = await Users.findAll({
+        const dbBlogData = await Blog.findAll({
             attributes: { exclude: ['password'] },
             include: [
                 {
-                  model: Blog,
+                  model: User,
                   attributes: [
                     'id',
                     'username',
-                    'post',
-                    'date_created',
                   ],
                 },
                 {
                     model: Comment,
                     attributes: [
                       'comment',
-                      'username',
                       'date_created',
                     ],
                   },
@@ -96,14 +93,14 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
-//GET the new post page
-router.get('/newpost', (req, res) => {
-    if (!req.session.loggedIn) {
+//GET the login/signup page
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
 
-    res.render('newPost');
+    res.render('login');
 });
 
 
