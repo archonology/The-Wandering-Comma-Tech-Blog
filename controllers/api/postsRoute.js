@@ -70,7 +70,7 @@ router.put('/posts/:id', async (req, res) => {
     }
 
     res.status(200).json(dbBlogData);
-    res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+    res.render('homepage', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -78,7 +78,7 @@ router.put('/posts/:id', async (req, res) => {
 
 
 //DELETE a blogpost
-router.delete('/dashboard/:id', async (req, res) => {
+const deletePost = router.delete('/posts/:id', async (req, res) => {
   try {
     const blogData = await Blog.destroy({
       where: {
