@@ -32,4 +32,8 @@ Not at this time.
 If you have questions about this project or any of my other work, please contact me at reed.meher@gmail.com. Check out more of my work on Github at [archonology](https://github.com/archonology).
     
 ## License Info
-(default GitHub license)
+This project is covered under **The Unlicense**. 
+<br>
+*This is free and unencumbered software released into the public domain. <br> Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.* 
+<br>
+To learn more, click the badge: [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
