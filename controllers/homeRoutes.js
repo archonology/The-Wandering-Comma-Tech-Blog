@@ -2,6 +2,15 @@ const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+//GET the login/signup page
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('login');
+});
 
 //GET all blog posts
 router.get('/', async (req, res) => {
@@ -33,18 +42,6 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-//GET the login/signup page
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('login');
-});
-
-
 
 //GET a single post
 router.get('/posts/:id', async (req, res) => {
@@ -109,6 +106,16 @@ router.get('/userposts/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+//GET the newpost page if you are logged in
+router.get('/newpost', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('newpost');
 });
 
 
