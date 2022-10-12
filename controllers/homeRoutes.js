@@ -93,5 +93,15 @@ router.get('/dashboard', async (req, res) => {
     }
 });
 
+//GET the new post page
+router.get('/newpost', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('newPost');
+});
+
 
 module.exports = router;
