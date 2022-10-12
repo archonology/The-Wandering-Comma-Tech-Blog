@@ -1,54 +1,31 @@
 const router = require('express').Router();
 const { Comment, Blog, User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //GET all comments (/api/comment)
-// router.get('/', async (req, res) => {
-//     try {
-//         const dbCommentData = await Comment.findAll({
-//             // attributes: ['id', 'title', 'post', 'date_created'],
-//             include: [{ model: User }, { model: Blog }],
-//         });
-  
-//         res.status(200).json(dbCommentData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-//   });
-
-//GET Comments
 router.get('/', async (req, res) => {
     try {
         const dbCommentData = await Comment.findAll({
-            attributes: ['id', 'comment', 'user_id', 'date_created'],
-            include: [
-                {
-                  model: Blog,
-                  attributes: [
-                    'id',
-                  ],
-                },
-                {
-                  model: User,
-                  attributes: [
-                    'id',
-                    'name',
-                  ],
-                },
-              ],
+            // attributes: ['id', 'title', 'post', 'date_created'],
+            include: [{ model: User }, { model: Blog }],
         });
-
-        // const comments = dbBlogData.map((comment) => comment.get({ plain: true }));
+  
         res.status(200).json(dbCommentData);
-        // res.render('post', { comments, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }
-});
+  });
 
 //POST a new comment
-router.post('/dashboard', async (req, res) => {
+router.post('/posts', withAuth, async (req, res) => {
     try {
       const newComment = await Comment.create({
+        // red.body needs: 
+        // {
+        //   user_id: 2,
+        //   comment: "",
+        //   username: ""
+        // }
         ...req.body,
         user_id: req.session.user_id,
       });

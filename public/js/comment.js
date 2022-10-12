@@ -1,6 +1,7 @@
 const commentFormHandler = async (event) => {
     event.preventDefault();
   
+    //how to get the user id in this method?
     const comment = document.querySelector('#comment').value.trim();
     const username = document.querySelector('#username').value.trim();
   
