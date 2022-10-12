@@ -1,4 +1,4 @@
-<div class="Dashboard d-flex justify-content-center p-2 flex-grow-1">
+<div class="Dashboard d-flex justify-content-start p-2 flex-grow-1">
     <div class="d-flex justify-content-end p-2">
         <!-- keep track of new post link -->
         <a href="/newPost" class="form-inline">
@@ -7,6 +7,13 @@
             </button>
         </a>
     </div>
+    {{#each users as |user|}}
+    <p>{{user.username}}</p>{{user.blogs.title}}
+    {{/each}}
+
+    
+
+
     <div class="each-post">
         {{#each blogs as |blog|}}
         <a href="/posts/{{id}}">

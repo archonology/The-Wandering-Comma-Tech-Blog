@@ -1,17 +1,30 @@
 const router = require('express').Router();
 const { User, Blog, Comment, CommentTag } = require('../../models');
 
+
 //GET all user info (/api/users)
 router.get('/', async (req, res) => {
   try {
-      const dbUserData = await User.findAll({
-          // attributes: ['id', 'title', 'post', 'date_created'],
-          include: [{ model: Blog }, { model: Comment }],
-      });
+    const dbUserData = await User.findAll({
+      include: [{ model: Blog }, { model: Comment }],
+    });
 
-      res.status(200).json(dbUserData);
+    res.status(200).json(dbUserData);
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
+  }
+});
+
+//GET all specific info (/api/users/:?)
+router.get('/:id', async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk(req.params.id,{
+      include: [{ model: Blog }, { model: Comment }],
+    });
+
+    res.status(200).json(dbUserData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
@@ -84,19 +97,20 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
 //GET all blog posts by User
 router.get('/users/:id', async (req, res) => {
   try {
-      const dbBlogData = await Blog.findAll(req.params.id, {
-          attributes: ['id', 'title', 'post', 'date_created'],
-          include: [{ model: User }, { model: Comment },],
-      });
+    const dbBlogData = await Blog.findAll(req.params.id, {
+      attributes: ['id', 'title', 'post', 'date_created'],
+      include: [{ model: User }, { model: Comment },],
+    });
 
-      // const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
-      res.status(200).json(dbBlogData);
-      // res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+    // const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+    res.status(200).json(dbBlogData);
+    // res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 

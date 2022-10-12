@@ -12,6 +12,7 @@
 </div>
 {{/each}}
 
+{{#if loggedIn}}
 <div class="dropdown">
     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
         data-bs-auto-close="outside">Leave Comment</button>
@@ -32,4 +33,7 @@
     <button class="btn btn-outline-success delete" type="submit">
         Delete Post
     </button>
+    {{else}}
+    <p><em>Login to comment, update, and delete a post.</em></p>
+    {{/if}}
 </div>

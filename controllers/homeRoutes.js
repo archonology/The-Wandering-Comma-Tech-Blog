@@ -2,37 +2,6 @@ const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-//GET all blog posts
-router.get('/', async (req, res) => {
-    try {
-        const dbBlogData = await Blog.findAll({
-            attributes: { exclude: ['password'] },
-            include: [
-                {
-                  model: User,
-                  attributes: [
-                    'id',
-                    'username',
-                  ],
-                },
-                {
-                    model: Comment,
-                    attributes: [
-                      'comment',
-                      'date_created',
-                    ],
-                  },
-              ],
-        });
-
-        const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
-
-        res.render('homepage', { blogs, loggedIn: req.session.loggedIn,});
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 
 //GET all blog posts
 router.get('/', async (req, res) => {
@@ -93,15 +62,33 @@ router.get('/posts/:id', async (req, res) => {
 });
 
 //Get dashboard -- must be logged in
-router.get('/dashboard/:id', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     try {
-        const dbBlogData = await Blog.findByPk(req.params.id, {
-            attributes: ['id', 'title', 'post', 'user_id', 'date_created'],
+        const dbUserData = await User.findAll({
+            attributes: { exclude: ['password'] },
+            include: [
+                {
+                  model: Blog,
+                  attributes: [
+                    'title',
+                    'post',
+                    'date_created',
+                  ],
+                },
+                {
+                    model: Comment,
+                    attributes: [
+                      'comment',
+                      'username',
+                      'date_created',
+                    ],
+                  },
+              ],
         });
 
-        const blogs = dbBlogData.get({ plain: true });
+        const users = dbUserData.map((user) => user.get({ plain: true }));
 
-        res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+        res.render('dashboard', { users, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
     }
