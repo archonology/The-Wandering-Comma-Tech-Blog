@@ -98,7 +98,7 @@ router.post('/logout', (req, res) => {
 });
 
 
-//GET all blog posts by User
+//GET one User
 router.get('/users/:id', async (req, res) => {
   try {
     const dbBlogData = await Blog.findAll(req.params.id, {
