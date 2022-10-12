@@ -6,14 +6,14 @@ const commentFormHandler = async (event) => {
   
     if (comment && username) {
       // do I have the path I need in routes?
-      const response = await fetch('/api/comments', {
+      const response = await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({ comment, username }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        alert('comment posted');
       } else {
         alert('Failed to post comment.');
       }
