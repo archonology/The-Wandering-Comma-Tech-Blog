@@ -16,13 +16,16 @@
 <div class="dropdown">
     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
         data-bs-auto-close="outside">Leave Comment</button>
-    <form class="dropdown-menu p-4">
+    <form class="dropdown-menu p-4 comment-form">
 
         <div class="mb-3">
-            <label for="DropdownFormComment" class="form-label d-flex justify-content-start">Comment</label>
+            <label for="comment" class="form-label d-flex justify-content-start">Comment:</label>
 
-            <textarea name="comment" id="DropdownFormComment" cols="100" rows="10"
+            <textarea name="comment" id="comment" cols="100" rows="10"
                 placeholder="write comment here"></textarea>
+            <label for="username" class="form-label d-flex justify-content-start">your name:</label>
+            <input type="text" id="username">
+            <br>
             <br>
             <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
         </div>
