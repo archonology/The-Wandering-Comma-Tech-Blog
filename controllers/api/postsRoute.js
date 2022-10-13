@@ -55,9 +55,31 @@ router.post('/', async (req, res) => {
   try {
       const dbBlogData = await Blog.create(req.body, {
           include: [{ model: User }, { model: Comment }],
+          // how the post must be added:
+          // {
+          //   "title": "Sample Post",
+          //   "post": "To see if it works",
+          //   "user_id": 2
+          // }
       });
 
       res.status(200).json(dbBlogData);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+//POST route for the views
+router.post('/dashboard/newpost', async (req, res) => {
+  try {
+      const dbBlogData = await Blog.create(req.body, {
+          include: [{ model: User }, { model: Comment }],
+          title: req.body.title,
+          post: req.body.post,
+          user_id: req.body.user_id
+      });
+    
+      const blogs = dbBlogData.get({ plain: true });
+      res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
       res.status(500).json(err);
   }

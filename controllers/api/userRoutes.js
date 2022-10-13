@@ -80,6 +80,7 @@ router.post('/login', async (req, res) => {
       req.session.loggedIn = true;
       //sweeetttttt -- needs this for create user too
       req.session.user_id = dbUserData.id;
+      req.session.user_name = dbUserData.username;
 
 
       res
