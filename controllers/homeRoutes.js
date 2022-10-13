@@ -109,7 +109,7 @@ router.get('/dashboard/userposts/:id', async (req, res) => {
 });
 
 //GET the newpost page if you are logged in
-router.get('/dashboard/newpost', (req, res) => {
+router.get('/dashboard/newpost', withAuth, (req, res) => {
     if (!req.session.loggedIn) {
         res.redirect('/');
         return;

@@ -1,4 +1,4 @@
-const postFormHandler = async (event) => {
+const postFormHandler = async (event, req ) => {
     event.preventDefault();
   
     //how to get the user id in this method?
@@ -15,7 +15,7 @@ const postFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        alert('posted!');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to post.');
       }

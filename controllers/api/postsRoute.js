@@ -69,13 +69,13 @@ router.post('/', async (req, res) => {
   }
 });
 //POST route for the views
-router.post('/dashboard/newpost', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
       const dbBlogData = await Blog.create(req.body, {
           include: [{ model: User }, { model: Comment }],
           title: req.body.title,
           post: req.body.post,
-          user_id: req.body.user_id
+          user_id: req.body.user_id        
       });
     
       const blogs = dbBlogData.get({ plain: true });
