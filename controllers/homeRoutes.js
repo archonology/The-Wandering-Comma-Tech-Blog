@@ -60,7 +60,7 @@ router.get('/posts/:id', async (req, res) => {
 
 //Get dashboard -- must be logged in
 //the dashboard needs to be by user id.. how?
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const dbBlogData = await Blog.findAll({
             attributes: { exclude: ['password'] },
@@ -94,7 +94,7 @@ router.get('/dashboard', async (req, res) => {
 });
 
 //GET one of your single posts as a logged in user
-router.get('/dashboard/userposts/:id', async (req, res) => {
+router.get('/dashboard/userposts/:id', withAuth,  async (req, res) => {
     try {
         const dbBlogData = await Blog.findByPk(req.params.id, {
             include: [{ model: User }, { model: Comment }],

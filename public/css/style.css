@@ -68,8 +68,18 @@ p {
   background-color: #deac08;
 }
 
+#post-update {
+  background-color: #deac08;
+  color: #182c23;
+}
+
 .delete {
   background-color: #c64a41;
+}
+
+#post-delete {
+  background-color: #c64a41;
+  color: #182c23;
 }
 
 .login:hover {

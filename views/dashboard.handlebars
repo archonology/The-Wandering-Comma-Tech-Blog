@@ -1,4 +1,3 @@
-{{#if loggedIn}}
 <div class="Dashboard d-flex justify-content-start p-2 flex-grow-1">
         <div class="each-post">
         {{#each blogs as |blog|}}
@@ -18,11 +17,3 @@
             </button>
         </a>
     </div>
-    {{!-- {{#each users as |user|}}
-    <p>{{user.username}}</p>{{user.blogs.title}}
-    {{/each}} --}}
-
-    
-{{else}}
-<p><em>Login or sign up to view your dashboard.</em></p>
-{{/if}}
