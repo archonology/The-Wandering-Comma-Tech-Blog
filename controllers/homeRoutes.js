@@ -65,7 +65,7 @@ router.get('/dashboard', async (req, res) => {
         const dbBlogData = await Blog.findAll({
             attributes: { exclude: ['password'] },
             where: {
-                          id: 1
+                          user_id: req.session.user_id
                         },
             include: [
                 {
@@ -94,7 +94,7 @@ router.get('/dashboard', async (req, res) => {
 });
 
 //GET one of your single posts as a logged in user
-router.get('/userposts/:id', async (req, res) => {
+router.get('/dashboard/userposts/:id', async (req, res) => {
     try {
         const dbBlogData = await Blog.findByPk(req.params.id, {
             include: [{ model: User }, { model: Comment }],
@@ -109,7 +109,7 @@ router.get('/userposts/:id', async (req, res) => {
 });
 
 //GET the newpost page if you are logged in
-router.get('/newpost', (req, res) => {
+router.get('/dashboard/newpost', (req, res) => {
     if (!req.session.loggedIn) {
         res.redirect('/');
         return;
