@@ -1,28 +1,27 @@
-//blog deletes
+//blog updates
 const updatePostFormHandler = async (event) => {
   event.preventDefault();
 
   //how to get the user id in this method?
   const title = document.querySelector("#title").value.trim();
   const post = document.querySelector("#newPost").value.trim();
-  let user_id;
 
-  if (event) {
+  if (title && post) {
     // do I have the path I need in routes?
-    const response = await fetch("/posts/:id", {
+    const response = await fetch("/api/posts/:id", {
       method: "PUT",
-      body: JSON.stringify({ title, post, user_id }),
+      body: JSON.stringify({ title, post }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      alert("post deleted");
+        document.location.replace('/dashboard');
     } else {
-      alert("Failed to delete post.");
+      alert("Failed to update post.");
     }
   }
 };
 
 document
-  .querySelector(".update")
+  .querySelector(".update-form")
   .addEventListener("submit", updatePostFormHandler);

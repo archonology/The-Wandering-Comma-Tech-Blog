@@ -34,20 +34,21 @@
     <div class="dropdown">
         <button type="button" class="btn dropdown-toggle update" data-bs-toggle="dropdown" aria-expanded="false"
             data-bs-auto-close="outside">Update Post</button>
-        <form class="dropdown-menu p-4 comment-form">
+
+        <form class="dropdown-menu p-4 update-form">
 
             <div class="mb-3">
 
                 <label for="title" class="form-label d-flex justify-content-start">Title:</label>
-                  <textarea name="title" id="update-post" cols="100" rows="2">{{blogs.title}}</textarea>
+                  <textarea name="title" id="title" cols="100" rows="2">{{blogs.title}}</textarea>
 
                 <label for="update-post" class="form-label d-flex justify-content-start">Post:</label>
-                <textarea name="update-post" id="update-post" cols="100" rows="10">{{blogs.post}}</textarea>
+                <textarea name="update-post" id="newPost" cols="100" rows="10">{{blogs.post}}</textarea>
 
                 <br>
                 <br>
 
-                <button type="submit" class="btn d-flex justify-content-end btn-outline-success update"
+                <button type="submit" class="btn d-flex justify-content-end btn-outline-success updating"
                     id="post-update">Update Post</button>
             </div>
         </form>
@@ -55,7 +56,7 @@
         <div class="dropdown">
             <button type="button" class="btn dropdown-toggle delete" data-bs-toggle="dropdown"
                 aria-expanded="false" data-bs-auto-close="outside">Delete Post</button>
-            <form class="dropdown-menu p-4 comment-form">
+            <form class="dropdown-menu p-4 delete-form">
 
                 <div class="mb-3">
 
