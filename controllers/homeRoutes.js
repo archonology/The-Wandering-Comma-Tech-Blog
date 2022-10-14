@@ -108,15 +108,34 @@ router.get('/dashboard/userposts/:id', withAuth,  async (req, res) => {
     }
 });
 
-//GET the newpost page if you are logged in
-router.get('/dashboard/newpost', withAuth, (req, res) => {
-    // if (!req.session.loggedIn) {
-    //     res.redirect('/');
-    //     return;
-    // }
+router.get('/dashboard/newpost', withAuth, async (req, res) => {
+    try {
+        const dbBlogData = await User.findAll({
+            attributes: { exclude: ['password'] }
+        });
 
-    res.render('newpost');
+        const users = dbBlogData.map((user) => user.get({ plain: true }));
+
+        res.render('newpost', { users, loggedIn: req.session.loggedIn,});
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
+
+// //GET the newpost page if you are logged in
+// router.get('/dashboard/newpost', withAuth, (req, res) => {
+//     if (!req.session.loggedIn) {
+//         res.redirect('/');
+//         return;
+//     }
+//     res.render('newpost');
+// } catch (err) {
+//     res.status(500).json(err);
+// }
+// }
+// });
+
+
 
 
 
