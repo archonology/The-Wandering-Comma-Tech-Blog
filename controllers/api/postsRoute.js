@@ -22,7 +22,7 @@ router.get('/posts/:id', async (req, res) => {
           include: [{ model: User }, { model: Comment }],
         });
 
-      const blogs = dbBlogData.get({ plain: true });
+        const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
       // res.status(200).json(dbBlogData);
       res.render('posts', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
           user_id: req.session.user_id,      
       });
     
-      const blogs = dbBlogData.get({ plain: true });
+      const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
       res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
       res.status(500).json(err);
@@ -60,7 +60,7 @@ router.put('/:id', async (req, res) => {
           },      
       });
     
-      const blogs = dbBlogData.get({ plain: true });
+      const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
       res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
       res.status(500).json(err);
@@ -80,7 +80,7 @@ router.delete('/:id', async (req, res) => {
           },      
       });
     
-      const blogs = dbBlogData.get({ plain: true });
+      const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
       res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
       res.status(500).json(err);
