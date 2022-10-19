@@ -43,30 +43,17 @@ router.get('/', async (req, res) => {
     }
 });
 
-//GET a single post
-router.get('/posts/:id', async (req, res) => {
-    try {
-        const dbBlogData = await Blog.findByPk(req.params.id, {
-            include: [{ model: User }, { model: Comment }],
-          });
-
-        const blogs = dbBlogData.get({ plain: true });
-        // res.status(200).json(dbBlogData);
-        res.render('posts', { blogs, loggedIn: req.session.loggedIn,});
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 //Get dashboard -- must be logged in
-//the dashboard needs to be by user id.. how?
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const dbBlogData = await Blog.findAll({
-            attributes: { exclude: ['password'] },
+
             where: {
-                          user_id: req.session.user_id
-                        },
+                user_id: req.session.user_id,
+              },
+
+            attributes: { exclude: ['password'] },
+           
             include: [
                 {
                   model: User,
@@ -93,6 +80,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+
+
 //GET one of your single posts as a logged in user
 router.get('/dashboard/userposts/:id', withAuth,  async (req, res) => {
     try {
@@ -101,7 +90,6 @@ router.get('/dashboard/userposts/:id', withAuth,  async (req, res) => {
           });
 
         const blogs = dbBlogData.get({ plain: true });
-        // res.status(200).json(dbBlogData);
         res.render('userposts', { blogs, loggedIn: req.session.loggedIn,});
     } catch (err) {
         res.status(500).json(err);
@@ -121,21 +109,6 @@ router.get('/dashboard/newpost', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-// //GET the newpost page if you are logged in
-// router.get('/dashboard/newpost', withAuth, (req, res) => {
-//     if (!req.session.loggedIn) {
-//         res.redirect('/');
-//         return;
-//     }
-//     res.render('newpost');
-// } catch (err) {
-//     res.status(500).json(err);
-// }
-// }
-// });
-
-
 
 
 

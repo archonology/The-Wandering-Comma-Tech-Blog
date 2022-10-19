@@ -1,4 +1,3 @@
-{{#if loggedIn}}
 <div class="each-post">
     <h2>{{blogs.title}}</h2>
     <p><em>{{blogs.date_created}}</em></p>
@@ -81,7 +80,4 @@
             <script src="/js/comment.js"></script>
             <script src="/js/delete.js"></script>
             <script src="/js/update.js"></script>
-            {{else}}
-            <p><em>Login to edit post.</em></p>
         </div>
-        {{/if}}

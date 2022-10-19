@@ -15,16 +15,20 @@ router.get("/", async (req, res) => {
   }
 });
 
-//GET a single post
-router.get("/:id", async (req, res) => {
+//GET one blog
+router.get('/:id', async (req, res) => {
   try {
     const dbBlogData = await Blog.findByPk(req.params.id, {
-      include: [{ model: User }, { model: Comment }],
+      include: [{ model: User }, { model: Comment },],
     });
 
-    const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
-    // res.status(200).json(dbBlogData);
-    res.render("posts", { blogs, loggedIn: req.session.loggedIn });
+    req.session.save(() => {
+      req.session.blog_id = dbBlogData.id;
+    });
+
+    // const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+    res.status(200).json(dbBlogData);
+    // res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -48,16 +52,13 @@ router.post("/", async (req, res) => {
 });
 
 //UPDATE route for the views
-router.put("/:id", async (req, res) => {
+router.put("/", async (req, res) => {
   console.log(req.body);
   console.log(req.session);
-  //not getting hold of the blog id? where and how to call?
-  console.log(req.params.id,);
   try {
     const dbBlogData = await Blog.update( {
-     
       where: {
-        id: req.params.id,
+        id: req.session.blog_id,
       },
 
       title: req.body.title,

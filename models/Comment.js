@@ -18,6 +18,19 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    date_created: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    blog_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'blog',
+        key: 'id',
+      },
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -26,11 +39,7 @@ Comment.init(
         key: 'id',
       },
     },
-    date_created: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+    
   },
   {
     sequelize,

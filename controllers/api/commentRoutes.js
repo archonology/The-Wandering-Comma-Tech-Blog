@@ -3,16 +3,31 @@ const { Comment, Blog, User } = require('../../models');
 
 //GET all comments (/api/comment)
 router.get('/', async (req, res) => {
-    try {
-        const dbCommentData = await Comment.findAll({
-            // attributes: ['id', 'title', 'post', 'date_created'],
-            include: [{ model: User }, { model: Blog }],
-        });
-  
-        res.status(200).json(dbCommentData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-  });
+  try {
+    const dbCommentData = await Comment.findAll({
+      // attributes: ['id', 'title', 'post', 'date_created'],
+      include: [{ model: User }, { model: Blog }],
+    });
 
-  module.exports = router;
+    res.status(200).json(dbCommentData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//GET one comment
+router.get('/:id', async (req, res) => {
+  try {
+    const dbCommentData = await Comment.findAll(req.params.id, {
+      attributes: ['id', 'title', 'post', 'date_created'],
+      include: [{ model: User }, { model: Blog },],
+    });
+
+    res.status(200).json(dbCommentData);
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
