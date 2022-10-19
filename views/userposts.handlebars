@@ -3,6 +3,13 @@
     <p><em>{{blogs.date_created}}</em></p>
     <p>{{blogs.post}}</p>
     <p><em>By {{blogs.user.username}}</em></p>
+    
+    {{!-- update and delete routes --}}
+    <a href="/dashboard/updateblog/{{blogs.id}}"><button id="update-link" class="btn card-link">Update this
+            home</button></a>
+
+    <a href="/dashboard/deleteblog/{{blogs.id}}"><button id="update-link" class="btn card-link">Delete this
+            home</button></a>
 </div>
 {{!-- for each comment --}}
 {{#each blogs.comments as |comment|}}
@@ -13,7 +20,7 @@
 {{/each}}
 
 
-<div class="dropdown">
+{{!-- <div class="dropdown">
     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
         data-bs-auto-close="outside">Leave Comment</button>
     <form class="dropdown-menu p-4 comment-form">
@@ -27,8 +34,9 @@
             <br>
             <br>
             <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
-        </div>
+        </div> --}}
 
+        {{!--
     </form>
     <div class="dropdown">
         <button type="button" class="btn dropdown-toggle update" data-bs-toggle="dropdown" aria-expanded="false"
@@ -39,7 +47,7 @@
             <div class="mb-3">
 
                 <label for="title" class="form-label d-flex justify-content-start">Title:</label>
-                  <textarea name="title" id="title" cols="100" rows="2">{{blogs.title}}</textarea>
+                <textarea name="title" id="title" cols="100" rows="2">{{blogs.title}}</textarea>
 
                 <label for="update-post" class="form-label d-flex justify-content-start">Post:</label>
                 <textarea name="update-post" id="newPost" cols="100" rows="10">{{blogs.post}}</textarea>
@@ -50,11 +58,11 @@
                 <button type="submit" class="btn d-flex justify-content-end btn-outline-success updating"
                     id="post-update">Update Post</button>
             </div>
-        </form>
+        </form> --}}
 
-        <div class="dropdown">
-            <button type="button" class="btn dropdown-toggle delete" data-bs-toggle="dropdown"
-                aria-expanded="false" data-bs-auto-close="outside">Delete Post</button>
+        {{!-- <div class="dropdown">
+            <button type="button" class="btn dropdown-toggle delete" data-bs-toggle="dropdown" aria-expanded="false"
+                data-bs-auto-close="outside">Delete Post</button>
             <form class="dropdown-menu p-4 delete-form">
 
                 <div class="mb-3">
@@ -72,7 +80,7 @@
                     <button type="submit" class="btn btn-primary d-flex justify-content-end btn-outline-success delete"
                         id="post-delete">Delete Post</button>
                 </div>
-            </form>
+            </form> --}}
 
             {{!-- <button class="btn btn-outline-success delete" id="post-delete" type="submit">
                 Delete Post

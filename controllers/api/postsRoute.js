@@ -54,12 +54,11 @@ router.put("/", async (req, res) => {
 
       title: req.body.title,
       post: req.body.post,
-      user_id: req.session.user_id,
+      id: req.body.blog_id,
     },
       {
 
         where: {
-          //change this, make it so you can get it from the body
           id: req.session.blog_id,
         },
       }

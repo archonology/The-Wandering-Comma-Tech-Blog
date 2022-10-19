@@ -1,0 +1,26 @@
+<div>
+    <form class="p-4 update-form">
+
+        <div class="mb-3">
+
+            <label for="title" class="form-label d-flex justify-content-start">Title:</label>
+            <textarea name="title" id="title" cols="100" rows="2">{{blogs.title}}</textarea>
+
+            <label for="update-post" class="form-label d-flex justify-content-start">Post:</label>
+            <textarea name="update-post" id="newPost" cols="100" rows="10">{{blogs.post}}</textarea>
+
+            <div class="form-group" hidden>
+                <label for="decor-id">Blog Id:</label>
+                <input class="form-input" type="number" id="blog-id" value="{{blogs.id}}" />
+            </div>
+
+            <br>
+            <br>
+
+            <button type="submit" class="btn d-flex justify-content-end btn-outline-success updating"
+                id="post-update">Update Post</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/update.js"></script>

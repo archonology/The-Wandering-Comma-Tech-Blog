@@ -103,4 +103,32 @@ router.get("/dashboard/userposts/:id", async (req, res) => {
   }
 });
 
+//render UPDATE view for one of your single posts as a logged in user
+router.get("/dashboard/updateblog/:id", async (req, res) => {
+  try {
+    const dbBlogData = await Blog.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment }],
+    });
+
+    const blogs = dbBlogData.get({ plain: true });
+    res.render("updatepost", { blogs, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//render DELETE view for one of your single posts as a logged in user
+router.get("/dashboard/updateblog/:id", async (req, res) => {
+  try {
+    const dbBlogData = await Blog.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment }],
+    });
+
+    const blogs = dbBlogData.get({ plain: true });
+    res.render("deletepost", { blogs, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
