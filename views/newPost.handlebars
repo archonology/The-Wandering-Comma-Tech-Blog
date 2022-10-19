@@ -1,17 +1,18 @@
 {{!-- view for creating new posts --}}
+<div>
+    <form class="new-post p-4">
 
-<form class="new-post p-4">
-
-    <div class="mb-3">
-        <label for="title">Title:</label>
-        <input type="text" class="form-input" id="title" placeholder="title">
-        <label for="post" class="form-label d-flex justify-content-start">New Blog Post:</label>
-        <textarea name="post" id="post" cols="175" rows="10" class="form-input"
-            placeholder="new post here"></textarea>
-        <br>
-        <button type="submit" class="btn d-flex justify-content-end">Publish</button>
-    </div>
-</form>
+        <div class="mb-3">
+            <label for="title">Title:</label>
+            <input type="text" class="form-input" id="title" placeholder="title">
+            <label for="post" class="form-label d-flex justify-content-start">New Blog Post:</label>
+            <textarea name="post" id="post" cols="175" rows="10" class="form-input"
+                placeholder="new post here"></textarea>
+            <br>
+            <button type="submit" class="btn d-flex justify-content-end">Publish</button>
+        </div>
+    </form>
+</div>
 
 
 <script src="/js/newpost.js"></script>
