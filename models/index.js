@@ -1,7 +1,6 @@
 const User = require('./User');
 const Blog = require('./Blog');
 const Comment = require('./Comment');
-const CommentTag = require('./CommentTag');
 
 //blogs belong to users
 Blog.belongsTo(User, {
@@ -25,14 +24,16 @@ User.hasMany(Comment, {
   onDelete: 'CASCADE'
 });
 
+//comment belong to users
+Comment.belongsTo(Blog, {
+  foreignKey: "blog_id",
+});
+
+//a user hasMany blogs
+Blog.hasMany(Comment, {
+  foreignKey: 'blog_id',
+  onDelete: 'CASCADE'
+});
 
 
-//THROUGH CommentTag to join the tables as needed
-Comment.belongsToMany(User, { through: CommentTag, foreignKey: "comment_id" });
-User.belongsToMany(Comment, { through: CommentTag, foreignKey: "user_id" });
-
-Comment.belongsToMany(Blog, { through: CommentTag, foreignKey: "comment_id" });
-Blog.belongsToMany(Comment, { through: CommentTag, foreignKey: "blog_id" });
-User.belongsToMany(Blog, { through: CommentTag, foreignKey: "user_id" });
-
-module.exports = { User, Blog, Comment, CommentTag };
+module.exports = { User, Blog, Comment };

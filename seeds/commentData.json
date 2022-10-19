@@ -2,31 +2,37 @@
     {
         "user_id": 2,
         "comment": "Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet consectetur.Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet consectetur.Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet consectetur.",
-        "username": "Cookie Cash"
+        "username": "Cookie Cash",
+        "blog_id": 1
     },
     {
         "user_id": 3,
         "comment": "Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. ",
-        "username": "Cody Python"
+        "username": "Cody Python",
+        "blog_id": 1
     },
     {
         "user_id": 2,
         "comment": "Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. ",
-        "username": "Cookie Cash"
+        "username": "Cookie Cash",
+        "blog_id": 2
     },
     {
         "user_id": 1,
         "comment": "Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet consectetur.Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. ",
-        "username": "Javi Scripts"
+        "username": "Javi Scripts",
+        "blog_id": 2
     },
     {
         "user_id": 1,
         "comment": "Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. Ipsum dolor sit amet consectetur.",
-        "username": "Javi Scripts"
+        "username": "Javi Scripts",
+        "blog_id": 3
     },
     {
         "user_id": 3,
         "comment": "Et odio pellentesque diam volutpat commodo sed. Tortor at risus viverra adipiscing at in. ",
-        "username": "Cody Python"
+        "username": "Cody Python",
+        "blog_id": 4
     }
 ]
