@@ -3,7 +3,7 @@ const postFormHandler = async (event) => {
   
     //how to get the user id in this method?
     const title = document.querySelector('#title').value.trim();
-    const post = document.querySelector('#newPost').value.trim();
+    const post = document.querySelector('#post').value.trim();
   
     if (title && post) {
       // do I have the path I need in routes?
