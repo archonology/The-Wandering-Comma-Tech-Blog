@@ -21,13 +21,8 @@ router.get('/:id', async (req, res) => {
       include: [{ model: User }, { model: Comment },],
     });
 
-    req.session.save(() => {
-      req.session.blog_id = dbBlogData.id;
-    });
-
-    // const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
     res.status(200).json(dbBlogData);
-    // res.render('dashboard', { blogs, loggedIn: req.session.loggedIn,});
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -55,16 +50,20 @@ router.put("/", async (req, res) => {
   console.log(req.body);
   console.log(req.session);
   try {
-    const dbBlogData = await Blog.update( {
-      where: {
-        id: req.session.blog_id,
-      },
+    const dbBlogData = await Blog.update({
 
       title: req.body.title,
       post: req.body.post,
       user_id: req.session.user_id,
+    },
+      {
 
-    });
+        where: {
+          //change this, make it so you can get it from the body
+          id: req.session.blog_id,
+        },
+      }
+    );
 
     res.status(200).json(dbBlogData);
 

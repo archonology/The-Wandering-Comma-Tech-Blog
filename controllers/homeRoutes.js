@@ -76,7 +76,7 @@ router.get("/dashboard/newpost", async (req, res) => {
 });
 
 //GET one of your single posts as a logged in user
-router.get("/dashboard/userposts/:id", withAuth, async (req, res) => {
+router.get("/dashboard/userposts/:id", async (req, res) => {
   try {
     const dbBlogData = await Blog.findByPk(req.params.id, {
       include: [{ model: User }, { model: Comment }],
