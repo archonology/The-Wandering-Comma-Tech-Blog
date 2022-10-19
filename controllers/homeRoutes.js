@@ -37,6 +37,20 @@ router.get("/", async (req, res) => {
   }
 });
 
+//GET one blog post
+router.get("/:id", async (req, res) => {
+  try {
+    const dbBlogData = await Blog.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment }],
+    });
+
+    const blogs = dbBlogData.get({ plain: true });
+    res.render("posts", { blogs, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //Get dashboard -- must be logged in
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
