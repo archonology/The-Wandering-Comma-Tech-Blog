@@ -3,18 +3,19 @@ const commentFormHandler = async (event) => {
   
     //how to get the user id in this method?
     const comment = document.querySelector('#comment').value.trim();
-    const username = document.querySelector('#username').value.trim();
+    const blog_id = document.querySelector("#blog-id").value;
   
-    if (comment && username) {
+    if (comment && blog_id) {
       // do I have the path I need in routes?
-      const response = await fetch('/api/comment', {
+      const response = await fetch('/api/comments', {
         method: 'POST',
-        body: JSON.stringify({ comment, username }),
+        body: JSON.stringify({ comment, blog_id }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
         alert('comment posted');
+        document.location.replace('/');
       } else {
         alert('Failed to post comment.');
       }

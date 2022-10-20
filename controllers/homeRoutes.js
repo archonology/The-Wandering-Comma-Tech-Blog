@@ -37,20 +37,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-//GET one blog post
-router.get("/:id", async (req, res) => {
-  try {
-    const dbBlogData = await Blog.findByPk(req.params.id, {
-      include: [{ model: User }, { model: Comment }],
-    });
-
-    const blogs = dbBlogData.get({ plain: true });
-    res.render("posts", { blogs, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 //Get dashboard -- must be logged in
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
@@ -81,12 +67,42 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+
 router.get("/dashboard/newpost", async (req, res) => {
   if (req.session.loggedIn) {
     res.render("newPost");
     return;
   }
   res.redirect("/");
+});
+
+//GET one blog post
+router.get("/:id", async (req, res) => {
+  try {
+    const dbBlogData = await Blog.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment }],
+    });
+
+    const blogs = dbBlogData.get({ plain: true });
+    res.render("posts", { blogs, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+//route for adding comment
+router.get("/addcomment/:id", async (req, res) => {
+  try {
+    const dbBlogData = await Blog.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment }],
+    });
+
+    const blogs = dbBlogData.get({ plain: true });
+    res.render("addcomment", { blogs, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 //GET one of your single posts as a logged in user
@@ -104,7 +120,7 @@ router.get("/dashboard/userposts/:id", async (req, res) => {
 });
 
 //render UPDATE view for one of your single posts as a logged in user
-router.get("/dashboard/updateblog/:id", async (req, res) => {
+router.get("/dashboard/updatepost/:id", async (req, res) => {
   try {
     const dbBlogData = await Blog.findByPk(req.params.id, {
       include: [{ model: User }, { model: Comment }],
@@ -118,7 +134,7 @@ router.get("/dashboard/updateblog/:id", async (req, res) => {
 });
 
 //render DELETE view for one of your single posts as a logged in user
-router.get("/dashboard/updateblog/:id", async (req, res) => {
+router.get("/dashboard/deletepost/:id", async (req, res) => {
   try {
     const dbBlogData = await Blog.findByPk(req.params.id, {
       include: [{ model: User }, { model: Comment }],

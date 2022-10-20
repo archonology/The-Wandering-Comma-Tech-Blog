@@ -1,15 +1,17 @@
-<div class="each-post">
+    {{!-- update and delete routes --}}
+    <div>
+    <a href="/dashboard/updatepost/{{blogs.id}}"><button id="update-link" class="btn card-link btn1">Update this
+            home</button></a>
+
+    <a href="/dashboard/deletepost/{{blogs.id}}"><button id="delete-link" class="btn card-link">Delete this
+            home</button></a>
+    </div>
+
+<div class="each-post user-post">
     <h2>{{blogs.title}}</h2>
     <p><em>{{blogs.date_created}}</em></p>
     <p>{{blogs.post}}</p>
     <p><em>By {{blogs.user.username}}</em></p>
-    
-    {{!-- update and delete routes --}}
-    <a href="/dashboard/updateblog/{{blogs.id}}"><button id="update-link" class="btn card-link">Update this
-            home</button></a>
-
-    <a href="/dashboard/deleteblog/{{blogs.id}}"><button id="update-link" class="btn card-link">Delete this
-            home</button></a>
 </div>
 {{!-- for each comment --}}
 {{#each blogs.comments as |comment|}}

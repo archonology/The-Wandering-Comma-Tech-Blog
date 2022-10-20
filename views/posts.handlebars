@@ -13,31 +13,10 @@
 {{/each}}
 
 {{#if loggedIn}}
-<div class="dropdown">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-        data-bs-auto-close="outside">Leave Comment</button>
-    <form class="dropdown-menu p-4 comment-form">
 
-        <div class="mb-3">
-            <label for="comment" class="form-label d-flex justify-content-start">Comment:</label>
+<a href="/addcomment/{{blogs.id}}"><button id="update-link" class="btn card-link btn1">Add Comment</button></a>
 
-            <textarea name="comment" id="comment" cols="100" rows="10"
-                placeholder="write comment here"></textarea>
-            <label for="username" class="form-label d-flex justify-content-start">your name:</label>
-            <input type="text" id="username">
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
-        </div>
-    </form>
-     <script src="/js/comment.js"></script>
-    {{!-- <button class="btn btn-outline-success update" type="submit">
-        Update Post
-    </button>
-    <button class="btn btn-outline-success delete" type="submit">
-        Delete Post
-    </button> --}}
-    {{else}}
-    <p><em>Login to leave a comment.</em></p>
-    {{/if}}
+{{else}}
+<p><em>Login to leave a comment.</em></p>
+{{/if}}
 </div>

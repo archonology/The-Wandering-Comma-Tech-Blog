@@ -44,6 +44,21 @@ p {
   margin-bottom: 1em;
 }
 
+.user-post {
+  margin-top: 2em;
+}
+
+#update-link {
+  margin-left: 1em;
+  justify-content: space-between;
+  float: right;
+}
+#delete-link {
+  margin-left: 1em;
+  justify-content: space-between;
+  float: right;
+}
+
 .dropdown {
   margin-top: 1em;
 }

@@ -7,6 +7,7 @@ const updatePostFormHandler = async (event) => {
   const post = document.querySelector("#newPost").value.trim();
   const blog_id = document.querySelector("#blog-id").value;
 
+
   if (title && post && blog_id) {
     // do I have the path I need in routes?
     const response = await fetch("/api/posts", {

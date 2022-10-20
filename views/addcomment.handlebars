@@ -1,0 +1,18 @@
+<div>
+    <form class="p-4 comment-form">
+
+        <div class="mb-3">
+            <label for="comment" class="form-label d-flex justify-content-start">Comment:</label>
+            <textarea name="comment" id="comment" cols="100" rows="10" placeholder="write comment here"></textarea>
+            <div class="form-group" hidden>
+                <label for="decor-id">Blog Id:</label>
+                <input class="form-input" type="number" id="blog-id" value="{{blogs.id}}" />
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/comment.js"></script>
