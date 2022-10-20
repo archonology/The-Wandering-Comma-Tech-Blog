@@ -2,28 +2,29 @@
 const deletePostFormHandler = async (event) => {
   event.preventDefault();
 
- //how to get the user id in this method?
-//  const title = document.querySelector('#title').value.trim();
-//  const post = document.querySelector('#newPost').value.trim();
-//  let user_id;
+  const confirmDelete = document.querySelector("#confirmDelete").value;
+  const blog_id = document.querySelector("#blog-id").value;
 
-  if (event) {
-    // do I have the path I need in routes?
-    const response = await fetch('/posts/:id', {
+  console.log(confirmDelete);
+  console.log(blog_id);
+
+  if (confirmDelete == "Yes" && blog_id) {
+    const response = await fetch('api/posts', {
       method: 'DELETE',
-      body: JSON.stringify({ comment }),
+      body: JSON.stringify({ confirmDelete, blog_id }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
       alert('post deleted');
+      document.location.replace('/dashboard');
     } else {
-      alert('Failed to delete post.');
+      alert('Delete cancelled');
     }
   }
 };
 
 
 document
-  .querySelector('.delete')
+  .querySelector('.delete-form')
   .addEventListener('submit', deletePostFormHandler);

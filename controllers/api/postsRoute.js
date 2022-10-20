@@ -72,11 +72,13 @@ router.put("/", async (req, res) => {
 });
 
 //DELETE route for the views
-router.delete("/:id", async (req, res) => {
+router.delete("/", async (req, res) => {
+  console.log(req.body);
+  console.log(req.session);
   try {
     const dbBlogData = await Blog.destroy({
       where: {
-        id: req.params.id,
+        id: Number(req.body.blog_id),
       },
     });
 
