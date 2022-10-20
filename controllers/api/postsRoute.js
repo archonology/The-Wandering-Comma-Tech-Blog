@@ -75,12 +75,16 @@ router.put("/", async (req, res) => {
 router.delete("/", async (req, res) => {
   console.log(req.body);
   console.log(req.session);
+  console.log(req.body.blog_id);
   try {
     const dbBlogData = await Blog.destroy({
-      where: {
-        id: Number(req.body.blog_id),
-      },
-    });
+    },
+      {
+        where: {
+          id: req.body.blog_id,
+        },
+      }
+    );
 
     res.status(200).json(dbBlogData);
   } catch (err) {

@@ -4,7 +4,7 @@ const deletePost = async (event) => {
 
   console.log("The Blog id for deleting is " + blog_id);
   if (blog_id) {
-    const response = await fetch('api/homes', {
+    const response = await fetch('/api/posts', {
       method: 'DELETE',
       body: JSON.stringify({ blog_id }),
       headers: { 'Content-Type': 'application/json' },
