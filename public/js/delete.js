@@ -11,7 +11,7 @@ const deletePost = async (event) => {
     });
     if (response.ok) {
       alert('blog deleted');
-      // document.location.replace('/dashboard');
+      document.location.replace('/dashboard');
     } else {
       alert('delete cancelled');
     }
