@@ -1,10 +1,10 @@
     {{!-- update and delete routes --}}
     <div>
     <a href="/dashboard/updatepost/{{blogs.id}}"><button id="update-link" class="btn card-link btn1">Update this
-            home</button></a>
+            Post</button></a>
 
     <a href="/dashboard/deletepost/{{blogs.id}}"><button id="delete-link" class="btn card-link">Delete this
-            home</button></a>
+            Post</button></a>
     </div>
 
 <div class="each-post user-post">
@@ -20,74 +20,3 @@
     <p><em>Comment By: <strong>{{comment.username}}</strong> on {{comment.date_created}}</em></p>
 </div>
 {{/each}}
-
-
-{{!-- <div class="dropdown">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-        data-bs-auto-close="outside">Leave Comment</button>
-    <form class="dropdown-menu p-4 comment-form">
-
-        <div class="mb-3">
-            <label for="comment" class="form-label d-flex justify-content-start">Comment:</label>
-
-            <textarea name="comment" id="comment" cols="100" rows="10" placeholder="write comment here"></textarea>
-            <label for="username" class="form-label d-flex justify-content-start">your name:</label>
-            <input type="text" id="username">
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary d-flex justify-content-end">Post Comment</button>
-        </div> --}}
-
-        {{!--
-    </form>
-    <div class="dropdown">
-        <button type="button" class="btn dropdown-toggle update" data-bs-toggle="dropdown" aria-expanded="false"
-            data-bs-auto-close="outside">Update Post</button>
-
-        <form class="dropdown-menu p-4 update-form">
-
-            <div class="mb-3">
-
-                <label for="title" class="form-label d-flex justify-content-start">Title:</label>
-                <textarea name="title" id="title" cols="100" rows="2">{{blogs.title}}</textarea>
-
-                <label for="update-post" class="form-label d-flex justify-content-start">Post:</label>
-                <textarea name="update-post" id="newPost" cols="100" rows="10">{{blogs.post}}</textarea>
-
-                <br>
-                <br>
-
-                <button type="submit" class="btn d-flex justify-content-end btn-outline-success updating"
-                    id="post-update">Update Post</button>
-            </div>
-        </form> --}}
-
-        {{!-- <div class="dropdown">
-            <button type="button" class="btn dropdown-toggle delete" data-bs-toggle="dropdown" aria-expanded="false"
-                data-bs-auto-close="outside">Delete Post</button>
-            <form class="dropdown-menu p-4 delete-form">
-
-                <div class="mb-3">
-
-                    <label for="confirmDelete" class="form-label d-flex justify-content-start">Are you sure you want to
-                        delete this post forever?</label>
-                    <input type="radio" id="yes" name="confirm" value="No">
-                    <label for="yes">Yes</label><br>
-                    <input type="radio" id="no" name="confirm" value="Yes">
-                    <label for="no">No</label><br>
-
-                    <br>
-                    <br>
-
-                    <button type="submit" class="btn btn-primary d-flex justify-content-end btn-outline-success delete"
-                        id="post-delete">Delete Post</button>
-                </div>
-            </form> --}}
-
-            {{!-- <button class="btn btn-outline-success delete" id="post-delete" type="submit">
-                Delete Post
-            </button> --}}
-            <script src="/js/comment.js"></script>
-            <script src="/js/delete.js"></script>
-            <script src="/js/update.js"></script>
-        </div>

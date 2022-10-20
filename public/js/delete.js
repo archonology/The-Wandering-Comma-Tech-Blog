@@ -1,30 +1,21 @@
-//blog deletes
-const deletePostFormHandler = async (event) => {
+const deletePost = async (event) => {
   event.preventDefault();
-
-  const confirmDelete = document.querySelector("#confirmDelete").value;
   const blog_id = document.querySelector("#blog-id").value;
 
-  console.log(confirmDelete);
-  console.log(blog_id);
-
-  if (confirmDelete == "Yes" && blog_id) {
-    const response = await fetch('api/posts', {
+  console.log("The Blog id for deleting is " + blog_id);
+  if (blog_id) {
+    const response = await fetch('api/homes', {
       method: 'DELETE',
-      body: JSON.stringify({ confirmDelete, blog_id }),
+      body: JSON.stringify({ blog_id }),
       headers: { 'Content-Type': 'application/json' },
     });
-
     if (response.ok) {
-      alert('post deleted');
-      document.location.replace('/dashboard');
+      alert('blog deleted');
+      // document.location.replace('/dashboard');
     } else {
-      alert('Delete cancelled');
+      alert('delete cancelled');
     }
   }
 };
 
-
-document
-  .querySelector('.delete-form')
-  .addEventListener('submit', deletePostFormHandler);
+document.getElementById("blog-id").addEventListener("click", deletePost);

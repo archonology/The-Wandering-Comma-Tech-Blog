@@ -1,28 +1,7 @@
 <div>
-    <form class="p-4 delete-form">
-
-        <div class="mb-3">
-
-            <p class="form-label d-flex justify-content-start">Are you sure you want to delete
-                this post forever?</p>
-            <input type="radio" id="confirmDelete" name="confirmDelete" value="Yes" />
-            <label for="confirmDelete">Yes</label><br />
-            <input type="radio" id="confirmDelete" name="confirmDelete" value="No" />
-            <label for="confirmDelete">No</label><br />
-            
-             {{!-- hidden blog id to pass to route --}}
-            <div class="form-group" hidden>
-                <label for="blog-id">Blog Id:</label>
-                <input class="form-input" type="number" id="blog-id" value="{{blogs.id}}" />
-            </div>
-
-            <br />
-            <br />
-
-            <button type="submit" class="btn btn-primary d-flex justify-content-end btn-outline-success delete"
-                id="post-delete">Delete Post</button>
-        </div>
-    </form>
+    <h4>Are you sure you want to delete this Post?</h4>
+    <button class="btn d-flex justify-content-end btn-outline-success delete" id="blog-id" value="{{blogs.id}}">Yes</button>
+    <br>
+    <a href="/dashboard"><button class="btn d-flex justify-content-end btn-outline-success delete">No</button></a>
 </div>
-
 <script src="/js/delete.js"></script>
