@@ -6,6 +6,7 @@
 ![Screenshot of the homepage](./public/images/Screen%20Shot%202022-10-12%20at%204.13.46%20PM.png)    
 ## Table of Contents:
 #### [Description](#description)
+#### [Technology](#technology)
 #### [Installation](#installation)
 #### [Usage Info](#usage-info)
 #### [Contribution Guidelines](#contribution-guidelines)
@@ -15,6 +16,9 @@
 
 ## Description
 A developer's work is never done -- especially not when it comes to learning new things. I wanted a place where I could make posts about what I am learning, thoughts on coding, etc. The blog needed to exercise and hone my skills in creating a full stack application.  This application  allows for users to sign up, login in, and create and edit posts and comments. This application encrypts passwords and stores them hashed securely in the database.  I plan to add more features to this application over time, like the ability to add photos. Watch for more to come!
+
+## Technology
+For this application, Sequelize, MySQL2, Express (and Express Session), Handlebars, Bcrypt, Bootstrap, and Dotenv were used. The app is written in Javascript, HTML5, and CSS.  
     
 ## Installation
 Follow the link to the site deployed via Heroku if you do not want to install it locally.  To install locally, clone the repo link on your computer. Then do the `npm install` in the terminal for the root of this project (server.js file). To start with some seed data for sampling, next run `npm run seed` . You  can then activate the port on 3001 by entering the command `npm start`. 
