@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
   try {
     const dbBlogData = await Blog.findAll({
       attributes: { exclude: ["password"] },
+      order: [['date_created', 'DESC']],
       include: [
         {
           model: User,
@@ -46,6 +47,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       },
 
       attributes: { exclude: ["password"] },
+      order: [['date_created', 'DESC']],
 
       include: [
         {
