@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret: 'Super secret secret',
   //set auto logout for inactivity on the site
-  cookie: {maxAge:10000},
+  cookie: {maxAge: 60 * 60 * 1000},
   resave: false,
   saveUninitialized: true,
   expiration: 60 * 60 * 1000,
