@@ -21,13 +21,13 @@ A developer's work is never done -- especially not when it comes to learning new
 For this application, Sequelize, MySQL2, Express (and Express Session), Handlebars, Bcrypt, Bootstrap, and Dotenv were used. The app is written in Javascript, HTML5, and CSS.  
     
 ## Installation
-Follow the link to the site deployed via Heroku if you do not want to install it locally.  To install locally, clone the repo link on your computer. Then do the `npm install` in the terminal for the root of this project (server.js file). To start with some seed data for sampling, next run `npm run seed` . You  can then activate the port on 3001 by entering the command `npm start`. 
+*Installing from the browser: I've only tested this in Google Chrome and Safari.  At this time, the install feature is not compatible with Safari, but does work with Chrome.  
 
 ## Usage Info
 Not at this time.
 
 ## Contribution Guidelines
-Please contact me if you are intested in contributing, or create a branch and push it to me so I can check out your awesome ideas!
+Please contact me if you are intested in contributing, or create a fork and push it to me so I can check out your awesome ideas!
 
 ## Test Instructions
 Not at this time.
