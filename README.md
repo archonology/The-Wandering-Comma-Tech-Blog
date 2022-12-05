@@ -1,7 +1,7 @@
 # The Wandering Comma Tech Blog
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 ## Links
-[Click here to view the deployed site on Heroku](https://morning-caverns-74911.herokuapp.com)
+View the deployed site on Heroku: https://the-wandering-comma.herokuapp.com
 ## Screenshot
 ![Screenshot of the homepage](./public/images/Screen%20Shot%202022-10-12%20at%204.13.46%20PM.png)    
 ## Table of Contents:
