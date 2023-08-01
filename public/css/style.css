@@ -1,20 +1,22 @@
 :root {
-  --primary: #2b3650;
-  --secondary: #762a24;
-  --tertiary: #a53c1f;
-  --quatrinary: #3a7149;
-  --light: #e3e4e3;
+  --primary: hwb(167 15% 29%);
+  --secondary: hwb(151 17% 24%);
+  --tertiary: hwb(77 14% 14%);
+  --quatrinary: hwb(173 2% 41%);
+  --light: #dff7f3;
   --dark: #182c23;
 }
 
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--light);
+  background-image: url(../images/Cloudy.jpg);
+  background-size: cover;
 }
 
 main {
@@ -34,6 +36,7 @@ h2 {
   text-decoration: underline;
   color: var(--dark);
 }
+
 p {
   text-decoration: none;
   color: var(--dark);
@@ -53,6 +56,7 @@ p {
   justify-content: space-between;
   float: right;
 }
+
 #delete-link {
   margin-left: 1em;
   justify-content: space-between;
