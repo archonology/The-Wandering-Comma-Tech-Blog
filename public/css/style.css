@@ -1,9 +1,12 @@
 :root {
-  --primary: hwb(167 15% 29%);
-  --secondary: hwb(151 17% 24%);
-  --tertiary: hwb(136 36% 8%);
-  --quatrinary: hwb(335 22% 27%);
-  --light: hsl(175, 45%, 89%);
+  --first: hwb(167 15% 29%);
+  --second: hwb(151 17% 24%);
+  --third: hwb(136 36% 8%);
+  --fourth: hwb(335 27% 11%);
+  --fifth: hwb(335 43% 4%);
+  --sixth: hwb(167 12% 47%);
+  --seventh: hwb(198 44% 26%);
+  --light: hsl(168, 26%, 96%);
   --dark: hsl(188, 36%, 4%);
 }
 
@@ -19,28 +22,48 @@ body {
   background-size: cover;
 }
 
+header {
+  text-align: right;
+}
+
 main {
-  margin: 3em;
-  padding: 3em;
+  margin: 2rem;
 }
 
 h1 {
+  /* background-color: var(--seventh); */
+  padding: 1em;
   color: white;
+  text-shadow: 1px 2px 9px rgba(0, 0, 0, 0.737);
 }
 
 .login {
-  background-color: var(--primary);
+  background-color: var(--first);
+  color: var(--light);
   border: none;
   width: 80px;
+  transition: 1s;
+  margin-right: 3.2em;
 }
 
 .logout {
-  background-color: var(--quatrinary);
+  background-color: var(--fourth);
+  color: var(--light);
+  border: none;
+  width: 80px;
+  transition: 1s;
+  margin-right: 3.2em;
+}
+
+.dashbtn {
+  background-color: var(--first);
+  color: var(--light);
+  border: none;
+  margin-right: .6rem;
   transition: 1s;
 }
 
 h2 {
-  text-decoration: underline;
   color: var(--dark);
 }
 
@@ -50,8 +73,13 @@ p {
 }
 
 .each-post {
-  border-bottom: var(--dark) solid 2px;
   margin-bottom: 1em;
+  background-color: var(--light);
+  padding: 3em;
+  padding-top: 2em;
+  padding-bottom: 4em;
+  border-radius: 12px;
+  /* box-shadow: -10px 15px 35px rgba(26, 43, 51, 0.457); */
 }
 
 .user-post {
@@ -79,14 +107,14 @@ p {
 }
 
 .comment p {
-  color: var(--secondary);
+  color: var(--second);
   margin-top: 1em;
 }
 
 .new-post button {
   margin-top: 1em;
   color: white;
-  background-color: var(--quatrinary);
+  background-color: var(--fourth);
 }
 
 
@@ -108,19 +136,31 @@ p {
   color: #182c23;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .login:hover {
-  background-color: var(--tertiary);
+  background-color: var(--sixth);
   border: none;
-  color: var(--dark);
-  transform: scale(103%);
+  color: var(--light);
+
 }
 
 .logout:hover {
-  background-color: #762a24;
+  background-color: var(--fifth);
+  color: var(--light);
+
+}
+
+.dashbtn:hover {
+  background-color: var(--second);
+  color: var(--light);
+
 }
 
 h2:hover {
-  color: var(--tertiary);
+  color: var(--third);
 }
 
 .new-post button:hover {

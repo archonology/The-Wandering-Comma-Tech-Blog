@@ -15,24 +15,20 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-dark bg-dark text-align-center">
-      <a href="/">
-        <h1 class="m-5">The Wandering Comma</h1>
-      </a>
-      <a class="nav-item">
-        <span class="navbar navbar-dark bg-dark m-4">
-          {{#if loggedIn}}
-          <a class="m-4" href="/dashboard">Dashboard</a>
-      </a>
-      <button id="logout" class="btn btn-outline-success logout">Logout</button>
-      {{else}}
-      <a href="/login" class="m-5">
-        <button class="btn login" type="button">
-          Login
-        </button></a>
-      {{/if}}
-      </span>
-    </nav>
+    <a href="/">
+      <h1>The Wandering Comma</h1>
+    </a>
+
+    {{#if loggedIn}}
+    <a href="/dashboard"><button id="dashbtn" class="btn dashbtn ">Dashboard</button></a>
+    <button id="logout" class="btn logout ">Logout</button>
+    {{else}}
+    <a href="/login">
+      <button class="btn login" type="button">
+        Login
+      </button></a>
+    {{/if}}
+
   </header>
   <main>
     {{{body}}}
