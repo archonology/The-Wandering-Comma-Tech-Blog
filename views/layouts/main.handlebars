@@ -15,33 +15,23 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand m-4" href="/">The Wandering Comma</a>
-      <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link ml-3" href="/">Homepage<span class="sr-only"></span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link ml-3" href="/dashboard">Dashboard</a>
-          </li>
-        </ul>
-        <!-- login button needs route to handlebars html -->
+    <nav class="navbar navbar-dark bg-dark text-align-center">
+      <a href="/">
+        <h1 class="m-5">The Wandering Comma</h1>
+      </a>
+      <a class="nav-item">
         <span class="navbar navbar-dark bg-dark m-4">
           {{#if loggedIn}}
-          <button id="logout" class="btn btn-outline-success logout">Logout</button>
-          {{else}}
-          <a href="/login" class="form-inline">
-            <button class="btn btn-outline-success login" type="button">
-              Login
-            </button></a>
-          {{/if}}
-        </span>
-      </div>
+          <a class="m-4" href="/dashboard">Dashboard</a>
+      </a>
+      <button id="logout" class="btn btn-outline-success logout">Logout</button>
+      {{else}}
+      <a href="/login" class="m-5">
+        <button class="btn login" type="button">
+          Login
+        </button></a>
+      {{/if}}
+      </span>
     </nav>
   </header>
   <main>

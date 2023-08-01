@@ -1,10 +1,10 @@
 :root {
   --primary: hwb(167 15% 29%);
   --secondary: hwb(151 17% 24%);
-  --tertiary: hwb(77 14% 14%);
-  --quatrinary: hwb(173 2% 41%);
-  --light: #dff7f3;
-  --dark: #182c23;
+  --tertiary: hwb(136 36% 8%);
+  --quatrinary: hwb(335 22% 27%);
+  --light: hsl(175, 45%, 89%);
+  --dark: hsl(188, 36%, 4%);
 }
 
 body {
@@ -24,12 +24,19 @@ main {
   padding: 3em;
 }
 
+h1 {
+  color: white;
+}
+
 .login {
-  background-color: #53a268;
+  background-color: var(--primary);
+  border: none;
+  width: 80px;
 }
 
 .logout {
-  background-color: #c64a41;
+  background-color: var(--quatrinary);
+  transition: 1s;
 }
 
 h2 {
@@ -102,7 +109,10 @@ p {
 }
 
 .login:hover {
-  background-color: #2e613c;
+  background-color: var(--tertiary);
+  border: none;
+  color: var(--dark);
+  transform: scale(103%);
 }
 
 .logout:hover {
