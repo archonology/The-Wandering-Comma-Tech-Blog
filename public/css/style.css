@@ -1,17 +1,17 @@
 :root {
-  --first: hwb(167 15% 29%);
+  --first: hwb(167 27% 15%);
   --second: hwb(151 17% 24%);
   --third: hwb(136 36% 8%);
   --fourth: hwb(335 27% 11%);
-  --fifth: hwb(335 43% 4%);
-  --sixth: hwb(167 12% 47%);
-  --seventh: hwb(198 44% 26%);
+  --fifth: hwb(335 72% 0%);
+  --sixth: hwb(167 40% 10%);
+  --seventh: hwb(199 16% 54%);
   --light: hsl(168, 26%, 96%);
   --dark: hsl(188, 36%, 4%);
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -23,27 +23,43 @@ body {
 }
 
 header {
-  text-align: right;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--seventh);
+  padding: 2rem;
 }
+
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
 
 main {
   margin: 2rem;
 }
 
 h1 {
-  /* background-color: var(--seventh); */
-  padding: 1em;
-  color: white;
-  text-shadow: 1px 2px 9px rgba(0, 0, 0, 0.737);
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--light);
+  font-size: 32px;
+}
+
+.span-title {
+  color: var(--first);
+  font-size: 21px;
 }
 
 .login {
   background-color: var(--first);
-  color: var(--light);
+  /* color: var(--light); */
   border: none;
   width: 80px;
   transition: 1s;
-  margin-right: 3.2em;
+  /* margin-right: 3.2em; */
 }
 
 .logout {
@@ -52,19 +68,31 @@ h1 {
   border: none;
   width: 80px;
   transition: 1s;
-  margin-right: 3.2em;
+  /* margin-right: 3.2em; */
 }
 
 .dashbtn {
   background-color: var(--first);
   color: var(--light);
   border: none;
-  margin-right: .6rem;
+  /* margin-right: .6rem; */
+  transition: 1s;
+}
+
+.footbtn {
+  /* background-color: var(--seventh); */
+  color: var(--dark);
+  /* border: none; */
+  background: none;
+  padding: 1rem;
+  margin-top: 10em;
+  position: static;
   transition: 1s;
 }
 
 h2 {
   color: var(--dark);
+  font-size: 170%;
 }
 
 p {
@@ -143,20 +171,22 @@ a:hover {
 .login:hover {
   background-color: var(--sixth);
   border: none;
-  color: var(--light);
 
 }
 
 .logout:hover {
   background-color: var(--fifth);
-  color: var(--light);
 
 }
 
 .dashbtn:hover {
   background-color: var(--second);
-  color: var(--light);
 
+}
+
+.footbtn:hover {
+  background-color: var(--light);
+  color: var(--dark);
 }
 
 h2:hover {
