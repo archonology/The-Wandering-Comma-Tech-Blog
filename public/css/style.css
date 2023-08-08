@@ -11,22 +11,24 @@
 }
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--light);
-  background-image: url(../images/Cloudy.jpg);
+  /* background-image: url(../images/Cloudy.jpg); */
+  background: linear-gradient(var(--dark) 30%, var(--seventh), var(--fourth));
   background-size: cover;
+  color: var(--light);
 }
 
 header {
   text-align: center;
   display: flex;
   justify-content: space-between;
-  background-color: var(--seventh);
+  /* background-color: var(--seventh); */
   padding: 2rem;
 }
 
@@ -43,18 +45,18 @@ main {
 }
 
 h1 {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   color: var(--light);
   font-size: 32px;
 }
 
 .span-title {
-  color: var(--first);
+  color: var(--fifth);
   font-size: 21px;
 }
 
 .login {
-  background-color: var(--first);
+  background-color: var(--fourth);
   /* color: var(--light); */
   border: none;
   width: 80px;
@@ -79,6 +81,14 @@ h1 {
   transition: 1s;
 }
 
+h3 {
+  color: var(--light);
+}
+
+.form {
+  color: var(--light);
+}
+
 .footbtn {
   /* background-color: var(--seventh); */
   color: var(--dark);
@@ -91,21 +101,27 @@ h1 {
 }
 
 h2 {
-  color: var(--dark);
-  font-size: 170%;
+  color: var(--fourth);
+  font-weight: 600;
+  font-size: 190%;
+  transition: 1s;
 }
 
-p {
-  text-decoration: none;
-  color: var(--dark);
+
+.author {
+  font-weight: 500;
+}
+
+.dateline {
+  font-weight: 200;
+  text-align: right;
 }
 
 .each-post {
   margin-bottom: 1em;
-  background-color: var(--light);
-  padding: 3em;
-  padding-top: 2em;
-  padding-bottom: 4em;
+  background-color: black;
+  color: white;
+  padding: 2em;
   border-radius: 12px;
   /* box-shadow: -10px 15px 35px rgba(26, 43, 51, 0.457); */
 }
@@ -169,7 +185,8 @@ a:hover {
 }
 
 .login:hover {
-  background-color: var(--sixth);
+  background-color: var(--fifth);
+  color: var(--dark);
   border: none;
 
 }
@@ -185,8 +202,8 @@ a:hover {
 }
 
 .footbtn:hover {
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: transparent;
+  color: var(--fifth);
 }
 
 h2:hover {
