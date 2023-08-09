@@ -149,9 +149,8 @@ h2 {
 }
 
 .comment {
-  border-bottom: var(--fifth) solid 2px;
   color: var(--second);
-  line-height: 1.8;
+  line-height: 1;
 }
 
 .create-post {
