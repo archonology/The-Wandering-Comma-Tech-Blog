@@ -6,9 +6,9 @@
 </div>
 {{!-- for each comment --}}
 {{#each blogs.comments as |comment|}}
-<div class="comment">
+<div>
     <p>{{comment.comment}}</p>
-    <p><em>Comment By: <strong>{{comment.username}}</strong> on {{comment.date_created}}</em></p>
+    <p class="comment"><em>Comment by <strong>{{comment.username}}</strong> on {{comment.date_created}}</em></p>
 </div>
 {{/each}}
 

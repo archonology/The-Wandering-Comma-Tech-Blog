@@ -28,7 +28,7 @@ header {
   text-align: center;
   display: flex;
   justify-content: space-between;
-  /* background-color: var(--seventh); */
+  align-items: center;
   padding: 2rem;
 }
 
@@ -65,7 +65,7 @@ h1 {
 }
 
 .logout {
-  background-color: var(--fourth);
+  background-color: transparent;
   color: var(--light);
   border: none;
   width: 80px;
@@ -74,7 +74,7 @@ h1 {
 }
 
 .dashbtn {
-  background-color: var(--first);
+  background-color: transparent;
   color: var(--light);
   border: none;
   /* margin-right: .6rem; */
@@ -123,7 +123,6 @@ h2 {
   color: white;
   padding: 2em;
   border-radius: 12px;
-  /* box-shadow: -10px 15px 35px rgba(26, 43, 51, 0.457); */
 }
 
 .user-post {
@@ -131,9 +130,12 @@ h2 {
 }
 
 #update-link {
+  margin-top: 1em;
   margin-left: 1em;
   justify-content: space-between;
   float: right;
+  background-color: var(--second);
+
 }
 
 #delete-link {
@@ -147,18 +149,21 @@ h2 {
 }
 
 .comment {
-  border-bottom: var(--dark) solid 2px;
+  border-bottom: var(--fifth) solid 2px;
+  color: var(--second);
+  line-height: 1.8;
 }
 
-.comment p {
-  color: var(--second);
-  margin-top: 1em;
+.create-post {
+  background-color: var(--second);
+  transition: 1s;
 }
 
 .new-post button {
   margin-top: 1em;
   color: white;
   background-color: var(--fourth);
+  transition: 1s;
 }
 
 
@@ -192,12 +197,14 @@ a:hover {
 }
 
 .logout:hover {
-  background-color: var(--fifth);
+  background-color: transparent;
+  color: var(--fourth);
 
 }
 
 .dashbtn:hover {
-  background-color: var(--second);
+  background-color: transparent;
+  color: var(--second);
 
 }
 
@@ -210,8 +217,18 @@ h2:hover {
   color: var(--third);
 }
 
+.create-post:hover {
+  background-color: var(--third);
+  color: var(--dark);
+}
+
 .new-post button:hover {
   background-color: #53a268;
+}
+
+#update-link:hover {
+  background-color: var(--third);
+  color: var(--dark);
 }
 
 .update:hover {

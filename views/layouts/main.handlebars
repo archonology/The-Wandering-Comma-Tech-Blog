@@ -20,12 +20,16 @@
 <body>
 
   <header>
-    <a href="/">
-      <h1>The Wandering Comma <span class="span-title"> tech blog</span></h1>
-    </a>
+    <div class="title">
+      <a href="/">
+        <h1>The Wandering Comma <span class="span-title"> tech blog</span></h1>
+      </a>
+    </div>
     {{#if loggedIn}}
-    <a href="/dashboard"><button id="dashbtn" class="btn dashbtn ">Dashboard</button></a>
-    <button id="logout" class="btn logout ">Logout</button>
+    <div class="nav">
+      <a href="/dashboard"><button id="dashbtn" class="btn dashbtn ">Dashboard</button></a>
+      <button id="logout" class="btn logout ">Logout</button>
+    </div>
     {{else}}
     <a href="/login">
       <button class="btn login" type="button">
