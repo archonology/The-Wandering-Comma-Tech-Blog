@@ -1,19 +1,21 @@
- <div class="d-flex justify-content-end p-2">
-        <!-- keep track of new post link -->
-        <a href="/dashboard/newpost" class="form-inline">
-            <button class="btn btn-outline-success" type="button">
-                Create New Post
-            </button>
-        </a>
-    </div>
+<div class="d-flex justify-content-end p-2">
+    <!-- keep track of new post link -->
+    <a href="/dashboard/newpost" class="form-inline">
+        <button class="btn create-post" type="button">
+            Create New Post
+        </button>
+    </a>
+</div>
 <div class="Dashboard d-flex justify-content-start p-2 flex-grow-1">
-        <div class="each-post">
-        {{#each blogs as |blog|}}
+    {{#each blogs as |blog|}}
+    <div class="each-post">
+
         <a href="/dashboard/userposts/{{blog.id}}">
             <h2>{{blog.title}}</h2>
             <p><em>{{blog.date_created}}</em></p>
         </a>
         <p>{{blog.post}}</p>
-        {{/each}}
+
     </div>
+    {{/each}}
 </div>

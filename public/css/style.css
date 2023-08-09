@@ -1,47 +1,128 @@
 :root {
-  --primary: #2b3650;
-  --secondary: #762a24;
-  --tertiary: #a53c1f;
-  --quatrinary: #3a7149;
-  --light: #e3e4e3;
-  --dark: #182c23;
+  --first: hwb(167 27% 15%);
+  --second: hwb(151 17% 24%);
+  --third: hwb(136 36% 8%);
+  --fourth: hwb(335 27% 11%);
+  --fifth: hwb(335 72% 0%);
+  --sixth: hwb(167 40% 10%);
+  --seventh: hwb(199 16% 54%);
+  --light: hsl(168, 26%, 96%);
+  --dark: hsl(188, 36%, 4%);
 }
 
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Work Sans', sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--light);
+  /* background-image: url(../images/Cloudy.jpg); */
+  background: linear-gradient(var(--dark) 30%, var(--seventh), var(--fourth));
+  background-size: cover;
+  color: var(--light);
 }
 
+header {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+
 main {
-  margin: 3em;
-  padding: 3em;
+  margin: 2rem;
+}
+
+h1 {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--light);
+  font-size: 32px;
+}
+
+.span-title {
+  color: var(--fifth);
+  font-size: 21px;
 }
 
 .login {
-  background-color: #53a268;
+  background-color: var(--fourth);
+  /* color: var(--light); */
+  border: none;
+  width: 80px;
+  transition: 1s;
+  /* margin-right: 3.2em; */
 }
 
 .logout {
-  background-color: #c64a41;
+  background-color: transparent;
+  color: var(--light);
+  border: none;
+  width: 80px;
+  transition: 1s;
+  /* margin-right: 3.2em; */
+}
+
+.dashbtn {
+  background-color: transparent;
+  color: var(--light);
+  border: none;
+  /* margin-right: .6rem; */
+  transition: 1s;
+}
+
+h3 {
+  color: var(--light);
+}
+
+.form {
+  color: var(--light);
+}
+
+.footbtn {
+  /* background-color: var(--seventh); */
+  color: var(--dark);
+  /* border: none; */
+  background: none;
+  padding: 1rem;
+  margin-top: 10em;
+  position: static;
+  transition: 1s;
 }
 
 h2 {
-  text-decoration: underline;
-  color: var(--dark);
+  color: var(--fourth);
+  font-weight: 600;
+  font-size: 190%;
+  transition: 1s;
 }
-p {
-  text-decoration: none;
-  color: var(--dark);
+
+
+.author {
+  font-weight: 500;
+}
+
+.dateline {
+  font-weight: 200;
+  text-align: right;
 }
 
 .each-post {
-  border-bottom: var(--dark) solid 2px;
   margin-bottom: 1em;
+  background-color: black;
+  color: white;
+  padding: 2em;
+  border-radius: 12px;
 }
 
 .user-post {
@@ -49,10 +130,14 @@ p {
 }
 
 #update-link {
+  margin-top: 1em;
   margin-left: 1em;
   justify-content: space-between;
   float: right;
+  background-color: var(--second);
+
 }
+
 #delete-link {
   margin-left: 1em;
   justify-content: space-between;
@@ -64,18 +149,20 @@ p {
 }
 
 .comment {
-  border-bottom: var(--dark) solid 2px;
+  color: var(--second);
+  line-height: 1;
 }
 
-.comment p {
-  color: var(--secondary);
-  margin-top: 1em;
+.create-post {
+  background-color: var(--second);
+  transition: 1s;
 }
 
 .new-post button {
   margin-top: 1em;
   color: white;
-  background-color: var(--quatrinary);
+  background-color: var(--fourth);
+  transition: 1s;
 }
 
 
@@ -97,20 +184,50 @@ p {
   color: #182c23;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .login:hover {
-  background-color: #2e613c;
+  background-color: var(--fifth);
+  color: var(--dark);
+  border: none;
+
 }
 
 .logout:hover {
-  background-color: #762a24;
+  background-color: transparent;
+  color: var(--fourth);
+
+}
+
+.dashbtn:hover {
+  background-color: transparent;
+  color: var(--second);
+
+}
+
+.footbtn:hover {
+  background-color: transparent;
+  color: var(--fifth);
 }
 
 h2:hover {
-  color: var(--tertiary);
+  color: var(--third);
+}
+
+.create-post:hover {
+  background-color: var(--third);
+  color: var(--dark);
 }
 
 .new-post button:hover {
   background-color: #53a268;
+}
+
+#update-link:hover {
+  background-color: var(--third);
+  color: var(--dark);
 }
 
 .update:hover {
