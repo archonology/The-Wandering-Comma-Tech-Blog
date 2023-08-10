@@ -3,7 +3,7 @@
 ## Links
 View the deployed site on Heroku: https://the-wandering-comma.herokuapp.com
 ## Screenshot
-![Screenshot of the homepage](./public/images/Screen%20Shot%202022-10-12%20at%204.13.46%20PM.png)    
+![Screenshot of the homepage](./public/images/Screenshot%202023-08-10%20at%208.24.33%20AM.png)    
 ## Table of Contents:
 #### [Description](#description)
 #### [Technology](#technology)
